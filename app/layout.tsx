@@ -22,7 +22,9 @@ export default function RootLayout({
       <body className={`${GeistSans.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="max-w-[1300px] mx-auto">{children}</main>
+          <main className="px-4 sm:px-0 max-w-[1300px] mx-auto">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

@@ -29,11 +29,10 @@ export function DynamicLogo() {
 
   return (
     <Link href="/">
-      <div>
+      <div className="w-24 sm:w-32 md:w-40 lg:w-48 xl:w-56 2xl:w-64">
         <img
-          className="transition-all duration-200"
+          className="transition-all duration-200 w-full"
           src={logoSrc}
-          width={logoWidth}
           alt="NS MediaLAB Logo"
           style={{ width: `${logoWidth}px` }} // Inline style for dynamic width
         />

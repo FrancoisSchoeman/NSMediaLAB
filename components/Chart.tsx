@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import {
   BarChart,
   Bar,
@@ -25,8 +27,19 @@ const data = [
 ];
 
 export function Chart() {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+    }
+  }, []);
+
   return (
-    <ResponsiveContainer width={600} height="100%">
+    <ResponsiveContainer
+      width={windowWidth > 768 ? 600 : 300}
+      height={windowWidth > 768 ? "100%" : 300}
+    >
       <BarChart data={data}>
         <XAxis hide />
         <Bar type="monotone" dataKey="growth" fill="#6d28d9" />
