@@ -1,5 +1,14 @@
-import { ModeToggle } from "./ModeToggle";
-import { DynamicLogo } from "./DynamicLogo";
+import { ModeToggle } from "@/components/ModeToggle";
+import { DynamicLogo } from "@/components/DynamicLogo";
+import { MobileMenu } from "@/components/MobileMenu";
+
+const menuItems = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "/contact", label: "Contact" },
+];
 
 export function Header() {
   return (
@@ -10,19 +19,22 @@ export function Header() {
 
         <div className="flex flex-nowrap gap-4 items-center">
           <ul className="hidden sm:flex gap-4">
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
+            {menuItems.map((item, i) => (
+              <li key={i}>
+                <a
+                  href={item.href}
+                  className="dark:text-white hover:text-primary transition-colors text-gray-800 dark:hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           {/* TODO: Add Mobile Menu */}
-          <div className="sm:hidden">Mobile Menu</div>
+          <div className="sm:hidden">
+            <MobileMenu menuItems={menuItems} />
+          </div>
 
           <ModeToggle />
         </div>

@@ -8,8 +8,22 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "NS MediaLAB",
-  description: "Social Media Marketing Agency",
+  title: "Expert Social Media Marketing in Stilbaai | NS MediaLAB",
+  description:
+    "Elevate your brand with NS MediaLAB’s personalised social media marketing services for Facebook, Instagram, and YouTube. Based in Stilbaai, we specialise in growing small businesses.",
+  keywords:
+    "NS MediaLAB, social media marketing, Stilbaai, Facebook marketing, Instagram engagement, YouTube content strategy, small business growth, social media management, content creation, social media advertising, social media analytics, social media strategy, social media services, social media agency, social media marketing agency, social media marketing services, social media marketing company, social media marketing expert, social media marketing specialist, social media marketing professional",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  metadataBase: new URL("https://nsmedialab.co.za"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    images: "/og-image.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-ZA">
       <body className={`${GeistSans.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />

@@ -9,6 +9,16 @@ import {
   OpenInNewWindowIcon,
 } from "@radix-ui/react-icons";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | NS MediaLAB",
+  description:
+    "Ready to chat? Reach out through our contact form, email, or phone. Let&apos;s make your social media goals a reality together.",
+  keywords:
+    "social media marketing South Africa, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, reporting, affordable social media services",
+};
+
 export default function ContactPage() {
   return (
     <div className="grid gap-4 md:grid-cols-2 md:gap-16 my-16">
@@ -18,8 +28,8 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-2 sm:mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-            Fill out the form below and we will get back to you as soon as
-            possible.
+            Ready to chat? Reach out through our contact form, email, or phone.
+            Let&apos;s make your social media goals a reality together.
           </p>
         </div>
         <ContactForm />
