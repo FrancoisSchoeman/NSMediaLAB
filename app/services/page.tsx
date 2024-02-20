@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="my-16 flex min-h-screen flex-col items-center justify-between">
-      <section className="w-full">
+    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center">
+      <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
-          <div className="flex flex-col items-start justify-center space-y-4">
+          <div className="flex flex-col items-center justify-center space-y-4">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Services
@@ -33,7 +33,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 text-left">
             <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Social Media Management</h3>
               <ul className="list-disc ml-6">
@@ -161,6 +161,9 @@ export default function ServicesPage() {
               </ul>
             </div>
           </div>
+          <Button asChild>
+            <Link href="/faqs">Go To FAQs</Link>
+          </Button>
         </div>
       </section>
 

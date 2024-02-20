@@ -4,6 +4,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+import { useToast } from "@/components/ui/use-toast";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
+import { useEffect } from "react";
 
 const formSchema = z.object({
   name: z.string().max(100),
@@ -24,6 +27,15 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const { toast } = useToast();
+
+  // TODO: Add reCAPTCHA
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY";
+  //   document.body.appendChild(script);
+  // }, []);
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,6 +53,29 @@ export function ContactForm() {
     console.log(values.email);
     console.log(values.phone);
     console.log(values.message);
+
+    fetch("https://nsmedialab.co.za/mailer.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: values.message,
+        // TODO: Add reCAPTCHA
+        // recaptchaResponse: recaptchaToken, // obtained from reCAPTCHA execution
+      }),
+    })
+      .then((response) => response.text())
+      .then((data) => console.log(data))
+      .catch((error) => console.error("Error:", error));
+
+    toast({
+      title: "Form submitted!",
+      description: "We will be in touch soon.",
+    });
   }
 
   return (

@@ -66,3 +66,30 @@ body[style="pointer-events: none;"] {
     @apply bg-background text-foreground;
   }
 }
+
+/* Scrollbar Styling */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.dark ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6225c6;
+  border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f7bf1;
+}
+/* END Scrollbar Styling */

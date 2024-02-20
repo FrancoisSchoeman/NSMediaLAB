@@ -10,28 +10,9 @@ import {
 } from "@/components/ui/carousel";
 import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
 
-const reviews = [
-  {
-    name: "John Doe",
-    review: "I love this product. It's amazing!",
-    stars: 5,
-  },
-  {
-    name: "Jane Doe",
-    review: "I love this product. It's amazing!",
-    stars: 4,
-  },
-  {
-    name: "John Doe",
-    review: "I love this product. It's amazing!",
-    stars: 5,
-  },
-  {
-    name: "Jane Doe",
-    review: "I love this product. It's amazing!",
-    stars: 5,
-  },
-];
+import data from "../public/data.json";
+
+const reviews = data.reviews;
 
 export default function TestimonialCarousel() {
   return (
@@ -44,7 +25,7 @@ export default function TestimonialCarousel() {
     >
       <CarouselContent className="">
         {reviews.map((review, index) => (
-          <CarouselItem key={index} className="h-full max-w-lg">
+          <CarouselItem key={index} className="h-full max-w-lg text-left">
             <Card className="flex flex-col flex-nowrap justify-center">
               <CardContent className="py-6">
                 <div className="flex items-center space-x-2 mb-2">

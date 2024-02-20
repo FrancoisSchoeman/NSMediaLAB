@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="my-16 flex min-h-screen flex-col items-center justify-between">
-      <section className="w-full">
+    <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between">
+      <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
             <div className="space-y-2">
@@ -46,6 +46,9 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+          <Button asChild className="self-start sm:self-center">
+            <Link href="/services">Our Services</Link>
+          </Button>
         </div>
       </section>
 

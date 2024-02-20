@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 
 export default function FAQsPage() {
   return (
-    <div className="my-16 flex min-h-screen flex-col items-center justify-between">
-      <section className="w-full">
+    <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between">
+      <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
             <div className="space-y-2">
@@ -40,131 +40,134 @@ export default function FAQsPage() {
               </p>
             </div>
           </div>
-
-          <Separator />
-
-          <div>
-            <Accordion type="single" collapsible className="text-lg">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  Do I really need social media marketing for my business?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    In short, yes! South Africans are highly active on social
-                    media, with almost 90% using platforms like Facebook and
-                    Instagram daily. This presents a massive opportunity to
-                    reach your target audience, build brand awareness, and boost
-                    sales.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2">
-                <AccordionTrigger>
-                  Which platforms should I be on?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    The best platforms for your business depend on your target
-                    audience and industry. We can help you identify the right
-                    platforms and develop a tailored strategy to maximize your
-                    reach and engagement. Facebook excels at building community,
-                    Instagram is visual-driven, and YouTube is perfect for video
-                    content.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3">
-                <AccordionTrigger>
-                  What kind of content can you create?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    We create a variety of eye-catching and engaging content
-                    tailored to each platform, including:
-                  </p>
-                  <ul className="list-disc ml-6">
-                    <li>
-                      Facebook: Engaging posts, polls, questions, and live
-                      videos.
-                    </li>
-                    <li>
-                      Instagram: Stunning photos, reels, stories, and IGTV
-                      content.
-                    </li>
-                    <li>
-                      YouTube: High-quality explainer videos, product demos, and
-                      behind-the-scenes content.
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4">
-                <AccordionTrigger>
-                  I&apos;m on a tight budget. Can you still help me?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    Absolutely! We offer flexible packages and transparent
-                    pricing to fit your needs and budget. We can also help you
-                    optimize your spending and measure your results to ensure
-                    you&apos;re getting the most bang for your buck.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5">
-                <AccordionTrigger>
-                  What kind of results can I expect?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    Our goal is to help you achieve your specific social media
-                    goals, whether it&apos;s increasing brand awareness, driving
-                    website traffic, generating leads, or boosting sales.
-                    We&apos;ll provide you with regular reports so you can track
-                    your progress and see the impact of our work.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-6">
-                <AccordionTrigger>
-                  Do you offer paid advertising services?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    Yes, we can help you create and manage effective paid
-                    advertising campaigns on all three platforms. We&apos;ll
-                    target your ideal audience and deliver compelling ad
-                    creatives to maximize your reach and return on investment
-                    (ROI).
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-7">
-                <AccordionTrigger>
-                  Do you offer free consultations?
-                </AccordionTrigger>
-                <AccordionContent className="text-lg">
-                  <p>
-                    Absolutely! We&apos;d love to discuss your social media
-                    needs and goals in more detail. Schedule a free consultation
-                    today and see how we can help you dominate the South African
-                    social media landscape!
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
         </div>
       </section>
 
-      <Separator className="my-16 sm:mb-0" />
+      <section className="w-full">
+        <Separator className="mt-16" />
+
+        <div>
+          <Accordion
+            type="single"
+            collapsible
+            className="text-lg w-full text-left"
+          >
+            <AccordionItem value="item-1">
+              <AccordionTrigger>
+                Do I really need social media marketing for my business?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  In short, yes! South Africans are highly active on social
+                  media, with almost 90% using platforms like Facebook and
+                  Instagram daily. This presents a massive opportunity to reach
+                  your target audience, build brand awareness, and boost sales.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2">
+              <AccordionTrigger>
+                Which platforms should I be on?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  The best platforms for your business depend on your target
+                  audience and industry. We can help you identify the right
+                  platforms and develop a tailored strategy to maximize your
+                  reach and engagement. Facebook excels at building community,
+                  Instagram is visual-driven, and YouTube is perfect for video
+                  content.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3">
+              <AccordionTrigger>
+                What kind of content can you create?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  We create a variety of eye-catching and engaging content
+                  tailored to each platform, including:
+                </p>
+                <ul className="list-disc ml-6">
+                  <li>
+                    Facebook: Engaging posts, polls, questions, and live videos.
+                  </li>
+                  <li>
+                    Instagram: Stunning photos, reels, stories, and IGTV
+                    content.
+                  </li>
+                  <li>
+                    YouTube: High-quality explainer videos, product demos, and
+                    behind-the-scenes content.
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4">
+              <AccordionTrigger>
+                I&apos;m on a tight budget. Can you still help me?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  Absolutely! We offer flexible packages and transparent pricing
+                  to fit your needs and budget. We can also help you optimize
+                  your spending and measure your results to ensure you&apos;re
+                  getting the most bang for your buck.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5">
+              <AccordionTrigger>
+                What kind of results can I expect?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  Our goal is to help you achieve your specific social media
+                  goals, whether it&apos;s increasing brand awareness, driving
+                  website traffic, generating leads, or boosting sales.
+                  We&apos;ll provide you with regular reports so you can track
+                  your progress and see the impact of our work.
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6">
+              <AccordionTrigger>
+                Do you offer paid advertising services?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  Yes, we can help you create and manage effective paid
+                  advertising campaigns on all three platforms. We&apos;ll
+                  target your ideal audience and deliver compelling ad creatives
+                  to maximize your reach and return on investment (ROI).
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-7">
+              <AccordionTrigger>
+                Do you offer free consultations?
+              </AccordionTrigger>
+              <AccordionContent className="text-lg">
+                <p>
+                  Absolutely! We&apos;d love to discuss your social media needs
+                  and goals in more detail. Schedule a free consultation today
+                  and see how we can help you dominate the South African social
+                  media landscape!
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <Separator className="mb-16 sm:mb-0" />
 
       <section className="w-full">
         <div className="grid gap-4 md:grid-cols-2 md:gap-16">

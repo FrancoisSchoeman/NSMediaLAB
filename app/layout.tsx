@@ -34,9 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body className={`${GeistSans.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="px-4 sm:px-0 max-w-[1300px] mx-auto">
+          <main className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto">
             {children}
           </main>
           <Footer />
