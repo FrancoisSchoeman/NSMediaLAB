@@ -9,23 +9,34 @@ import { useState, useEffect } from "react";
 export function DynamicLogo() {
   const { theme } = useTheme();
   const [logoWidth, setLogoWidth] = useState(200);
+  const [scrollPos, setScrollPos] = useState(0);
+  const [logoSrc, setLogoSrc] = useState("/logo-white.webp");
+
+  useEffect(() => {
+    if (theme === "light") {
+      setLogoSrc("/logo-black.webp");
+    } else {
+      setLogoSrc("/logo-white.webp");
+    }
+  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > 50) {
-        setLogoWidth(120); // smaller width
-      } else {
-        setLogoWidth(200); // original width
-      }
+      setScrollPos(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Directly reference the public path for images
-  const logoSrc = theme === "dark" ? "/logo-white.webp" : "/logo-black.webp";
+  useEffect(() => {
+    if (scrollPos >= 70) {
+      setLogoWidth(120); // smaller width
+    } else if (scrollPos <= 30) {
+      setLogoWidth(200); // original width
+    }
+  }, [scrollPos]);
 
   return (
     <Link href="/">

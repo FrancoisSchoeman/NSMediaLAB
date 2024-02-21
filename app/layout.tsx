@@ -3,6 +3,7 @@ import "./globals.css";
 // GeistSans: --font-geist-sans
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -39,6 +40,7 @@ export default function RootLayout({
           <main className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto">
             {children}
           </main>
+          <Toaster />
           <Footer />
         </ThemeProvider>
       </body>

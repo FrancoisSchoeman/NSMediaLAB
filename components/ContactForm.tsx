@@ -69,13 +69,20 @@ export function ContactForm() {
       }),
     })
       .then((response) => response.text())
-      .then((data) => console.log(data))
-      .catch((error) => console.error("Error:", error));
-
-    toast({
-      title: "Form submitted!",
-      description: "We will be in touch soon.",
-    });
+      .then((data) => {
+        console.log(data);
+        toast({
+          title: "Form submitted!",
+          description: "We will be in touch soon.",
+        });
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        toast({
+          title: "Form submission failed!",
+          description: "Please try again later.",
+        });
+      });
   }
 
   return (

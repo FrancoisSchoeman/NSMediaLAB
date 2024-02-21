@@ -17,8 +17,6 @@ export default function Home() {
             Elevate Your Brand with Social Media Marketing
           </h1>
           <p className="max-w-[40ch] sm:max-w-[700px] mt-4 mx-auto text-gray-500 md:text-xl dark:text-gray-400">
-            {/* We provide innovative solutions to expand your brand&apos;s reach
-              on social media platforms. Let&apos;s grow together. */}
             Welcome to NS MediaLAB, your dedicated partner in navigating the
             bustling world of social media marketing. We bring a personal touch
             to each campaign, focusing on Facebook, Instagram, and YouTube to
@@ -63,9 +61,9 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Social Media Management</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 We manage your social media accounts, ensuring consistent and
@@ -74,7 +72,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Content Creation</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 Our team of creative professionals will create high-quality
@@ -83,7 +81,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Advertising Campaigns</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 We create and manage effective advertising campaigns to reach a
@@ -92,7 +90,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Analytics & Reporting</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 We provide detailed reports on your social media performance and
@@ -101,7 +99,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Paid Advertising</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 We manage your social media advertising campaigns to reach a
@@ -110,7 +108,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/services">
-            <div className="grid gap-1 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
+            <div className="flex flex-col justify-start items-start text-left min-h-36 bg-slate-100 hover:bg-slate-200 rounded-lg p-6 dark:bg-slate-800 dark:hover:bg-slate-700 dark:highlight-white/5 transition-colors">
               <h3 className="text-lg font-bold">Strategy Consultation</h3>
               <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
                 We provide strategic consultation to align your social media

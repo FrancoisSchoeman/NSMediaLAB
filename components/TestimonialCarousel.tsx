@@ -26,7 +26,7 @@ export default function TestimonialCarousel() {
       <CarouselContent className="">
         {reviews.map((review, index) => (
           <CarouselItem key={index} className="h-full max-w-lg text-left">
-            <Card className="flex flex-col flex-nowrap justify-center">
+            <Card className="flex flex-col flex-nowrap justify-start items-start min-h-56">
               <CardContent className="py-6">
                 <div className="flex items-center space-x-2 mb-2">
                   {[1, 2, 3, 4, 5].map((star) => (
