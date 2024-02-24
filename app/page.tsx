@@ -118,7 +118,7 @@ export default function Home() {
           </Link>
         </div>
         <Button asChild className="self-start sm:self-center">
-          <Link href="/services">Read More</Link>
+          <Link href="/services">Go to Services</Link>
         </Button>
       </section>
 

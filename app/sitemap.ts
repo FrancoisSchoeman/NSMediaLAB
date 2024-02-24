@@ -21,16 +21,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://nsmedialab.co.za/faqs",
+      url: "https://nsmedialab.co.za/pricing",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: "https://nsmedialab.co.za/about",
+      url: "https://nsmedialab.co.za/faqs",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: "https://nsmedialab.co.za/about",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 }

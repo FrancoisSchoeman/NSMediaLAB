@@ -22,9 +22,9 @@ export default function ServicesPage() {
         <div className="space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Services
-              </h2>
+              </h1>
               <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 Dive deeper into our services with detailed descriptions of how
                 we approach each platform, ensuring your business stands out in

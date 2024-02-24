@@ -14,6 +14,49 @@
       "name": "Fia Fourie Jewellery | Stilbaai",
       "review": "Nadia is professional and highly skilled, but also friendly and very easy to work with. She creates engaging visuals and breathes new life into my social media pages. I have been working with her for almost two years, and would honestly be lost without her!",
       "stars": 5
+    },
+    {
+      "name": "The Skin Zone | Stilbaai",
+      "review": "Nadia provides excellent service, and high quality work. We are happy to use and recommend her!",
+      "stars": 5
+    }
+  ],
+  "pricing": [
+    {
+      "title": "1 Post/Week",
+      "price": "R350/month",
+      "extra": "R100/month per extra platform",
+      "features": [
+        "1 post/week",
+        "*1 platform",
+        "Content creation",
+        "Scheduling",
+        "Monthly report"
+      ]
+    },
+    {
+      "title": "3 Posts/Week",
+      "price": "R750/month",
+      "extra": "R100/month per extra platform",
+      "features": [
+        "3 posts/week",
+        "*1 platform",
+        "Content creation",
+        "Scheduling",
+        "Monthly report"
+      ]
+    },
+    {
+      "title": "5 Posts/Week",
+      "price": "R1000/month",
+      "extra": "R100/month per extra platform",
+      "features": [
+        "5 posts/week",
+        "*1 platform",
+        "Content creation",
+        "Scheduling",
+        "Monthly report"
+      ]
     }
   ]
 }

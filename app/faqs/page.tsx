@@ -56,7 +56,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 Do I really need social media marketing for my business?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   In short, yes! South Africans are highly active on social
                   media, with almost 90% using platforms like Facebook and
@@ -70,7 +70,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 Which platforms should I be on?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   The best platforms for your business depend on your target
                   audience and industry. We can help you identify the right
@@ -86,7 +86,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 What kind of content can you create?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   We create a variety of eye-catching and engaging content
                   tailored to each platform, including:
@@ -111,7 +111,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 I&apos;m on a tight budget. Can you still help me?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   Absolutely! We offer flexible packages and transparent pricing
                   to fit your needs and budget. We can also help you optimize
@@ -125,7 +125,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 What kind of results can I expect?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   Our goal is to help you achieve your specific social media
                   goals, whether it&apos;s increasing brand awareness, driving
@@ -140,7 +140,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 Do you offer paid advertising services?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   Yes, we can help you create and manage effective paid
                   advertising campaigns on all three platforms. We&apos;ll
@@ -154,7 +154,7 @@ export default function FAQsPage() {
               <AccordionTrigger>
                 Do you offer free consultations?
               </AccordionTrigger>
-              <AccordionContent className="text-lg">
+              <AccordionContent className="text-lg text-left">
                 <p>
                   Absolutely! We&apos;d love to discuss your social media needs
                   and goals in more detail. Schedule a free consultation today
