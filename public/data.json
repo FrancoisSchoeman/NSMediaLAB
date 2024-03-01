@@ -58,5 +58,117 @@
         "Monthly report"
       ]
     }
+  ],
+  "images": [
+    {
+      "src": "/client-logos/tronelle-steyl-photography.webp",
+      "alt": "Tronelle Steyl Photography Stilbaai Logo",
+      "facebook": "https://www.facebook.com/p/Tronelle-Steyl-Fotografie-100086792325581/"
+    },
+    {
+      "src": "/client-logos/stilbaai-online.webp",
+      "alt": "Stilbaai Online Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100086939410923"
+    },
+    {
+      "src": "/client-logos/ghians-bbq.webp",
+      "alt": "Ghians BBQ and Grill House Stilbaai Logo",
+      "facebook": "https://www.facebook.com/ghiansbbq"
+    },
+    {
+      "src": "/client-logos/skin-zone-stilbaai.webp",
+      "alt": "The Skin Zone Stilbaai Logo",
+      "facebook": "https://www.facebook.com/TheSkinzoneStilbaai"
+    },
+    {
+      "src": "/client-logos/skin-zone-express.webp",
+      "alt": "The Skin Zone Express Stilbaai Logo",
+      "facebook": "https://www.facebook.com/theskinzoneexpress"
+    },
+    {
+      "src": "/client-logos/spar-stilbaai.webp",
+      "alt": "Spar Stilbaai Logo",
+      "facebook": "https://www.facebook.com/SPARStilbaai"
+    },
+    {
+      "src": "/client-logos/on-the-rocks.webp",
+      "alt": "On The Rocks Seafood and Steak Restaurant Stilbaai Logo",
+      "facebook": "https://www.facebook.com/OnTheRocksStilbaai"
+    },
+    {
+      "src": "/client-logos/mass-hire-stilbaai.webp",
+      "alt": "Mass Hire Stilbaai Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=61553751440637"
+    },
+    {
+      "src": "/client-logos/beach-castle.webp",
+      "alt": "Beach Castle Holiday Accommodation in Stilbaai Logo",
+      "facebook": "https://www.facebook.com/beachcastlestilbaai"
+    },
+    {
+      "src": "/client-logos/fia-fourie.webp",
+      "alt": "Fia Fourie Jewellery Stilbaai Logo",
+      "facebook": "https://www.facebook.com/FiaFourieJuwele"
+    },
+    {
+      "src": "/client-logos/susan-roos-juwele.webp",
+      "alt": "Susan Roos Jewellery Stilbaai Logo",
+      "facebook": "https://www.facebook.com/SusanRoosJuwele"
+    },
+    {
+      "src": "/client-logos/beach-house-upholstery.webp",
+      "alt": "Beach House Upholstery Stilbaai Logo",
+      "facebook": "https://www.facebook.com/beachhouseupholstery"
+    },
+    {
+      "src": "/client-logos/coastal-security-stilbaai.webp",
+      "alt": "Coastal Security Stilbaai Logo",
+      "facebook": "https://www.facebook.com/CSStilbaai"
+    },
+    {
+      "src": "/client-logos/pest-control-excellence.webp",
+      "alt": "Pest Control Excellence Mossel Bay Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100063761935317"
+    },
+    {
+      "src": "/client-logos/peace-of-mind-real-estate.webp",
+      "alt": "Peace Of Mind Real Estate Stilbaai Logo",
+      "facebook": "https://www.facebook.com/peaceofmindrealestatestillbay"
+    },
+    {
+      "src": "/client-logos/lighthouse-electronics-mossel-bay.webp",
+      "alt": "Lighthouse Electronics Mossel Bay Logo",
+      "facebook": "https://www.facebook.com/lighthouseelectronicsmosselbay"
+    },
+    {
+      "src": "/client-logos/farrel-tool-hire.webp",
+      "alt": "Farrell Hire - Tool and Equipment Hire in Stilbaai Logo",
+      "facebook": "https://www.facebook.com/farrellhirestilbaai"
+    },
+    {
+      "src": "/client-logos/stilbaai-security-network.webp",
+      "alt": "Stilbaai Security Network Logo",
+      "facebook": "https://www.facebook.com/stilbaaisekuriteitsnetwerk"
+    },
+    {
+      "src": "/client-logos/blue-point-technologies.webp",
+      "alt": "Blue Point Technologies Stilbaai Logo",
+      "facebook": "https://www.facebook.com/BluePointTechnologiesStilbaai"
+    },
+    {
+      "src": "/client-logos/still-painting.webp",
+      "alt": "Still Painting Services Stilbaai Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100086605951136"
+    },
+    {
+      "src": "/client-logos/inclusive-data-insights-durban.webp",
+      "alt": "Inclusive Data Insights Durban KwaZulu Natal Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100093833183436"
+    },
+    {
+      "src": "/client-logos/hammer-safaris-barrydale.webp",
+      "alt": "Hammer-Safaris Barrydale Logo",
+      "facebook": "https://www.facebook.com/HammerSafarisBarrydale"
+    }
   ]
 }

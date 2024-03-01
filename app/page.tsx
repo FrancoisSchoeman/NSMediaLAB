@@ -5,8 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import cube from "../public/rubiks-cube.json";
 import elevatingCube from "../public/rubiks-cube-elevating.json";
-import { Chart } from "@/components/Chart";
 import Link from "next/link";
+import LogoCarousel from "@/components/LogoCarousel";
 
 export default function Home() {
   return (
@@ -156,13 +156,16 @@ export default function Home() {
         <div className="flex flex-col sm:items-center justify-center items-start space-y-2">
           <Badge>Our Results</Badge>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-            Your Growth is Our Success
+            Some Of Our Clients
           </h2>
-          <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Our portfolio showcases a range of success stories, demonstrating
+          <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed sm:text-center lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            Our portfolio showcases a range of successful clients, demonstrating
             how strategic social media marketing can lead to tangible business
-            growth. Let these stories inspire your next campaign.
+            growth.
           </p>
+          <div className="w-full pt-4">
+            <LogoCarousel />
+          </div>
           <div className="py-4">
             <Button asChild>
               <Link href="/about">About Us</Link>
