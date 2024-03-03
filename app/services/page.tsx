@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center">
+    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4">
@@ -34,7 +34,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 text-left">
-            <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Social Media Management</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -56,7 +56,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Content Creation</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -77,7 +77,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Advertising Campaigns</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Analytics & Reporting</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -120,7 +120,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="grid gap-1 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Paid Advertising</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -140,7 +140,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="grid gap-1 pr-4 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
+            <div className="flex flex-col justify-items-start items-start pr-4 bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
               <h3 className="text-lg font-bold">Strategy Consultation</h3>
               <ul className="list-disc ml-6">
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
@@ -161,9 +161,14 @@ export default function ServicesPage() {
               </ul>
             </div>
           </div>
-          <Button asChild>
-            <Link href="/faqs">Go To FAQs</Link>
-          </Button>
+          <div className="my-4 flex sm:justify-center gap-4">
+            <Button asChild>
+              <Link href="/pricing">Our Pricing</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/faqs">Go To FAQs</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -184,7 +189,7 @@ export default function ServicesPage() {
             </p>
             <div className="py-4">
               <Button asChild>
-                <Link href="/contact">Get Started</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>

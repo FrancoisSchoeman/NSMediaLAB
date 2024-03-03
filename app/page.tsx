@@ -10,7 +10,7 @@ import LogoCarousel from "@/components/LogoCarousel";
 
 export default function Home() {
   return (
-    <div className="flex flex-col sm:items-center justify-between">
+    <div className="flex flex-col sm:items-center justify-between relative w-full h-full">
       <section className="min-h-full grid gap-4 md:grid-cols-2 md:gap-16 pt-16">
         <div className="flex sm:justify-center flex-col">
           <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
@@ -24,9 +24,12 @@ export default function Home() {
             strategies that resonate with your target audience, fostering
             engagement and growth.
           </p>
-          <div className="my-4">
+          <div className="my-4 flex gap-4">
             <Button asChild>
-              <Link href="/contact">Get Started</Link>
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/pricing">Our Pricing</Link>
             </Button>
           </div>
         </div>
@@ -140,7 +143,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="pt-6 w-64 sm:w-full">
+          <div className=" sm:pt-6 w-64 sm:w-full">
             <TestimonialCarousel />
           </div>
         </div>
@@ -168,7 +171,7 @@ export default function Home() {
           </div>
           <div className="py-4">
             <Button asChild>
-              <Link href="/about">About Us</Link>
+              <Link href="/pricing">Our Pricing</Link>
             </Button>
           </div>
         </div>
@@ -198,9 +201,12 @@ export default function Home() {
               MediaLAB today to start crafting a strategy that speaks to your
               brand&apos;s unique voice and goals.
             </p>
-            <div className="py-4">
+            <div className="my-4 flex gap-4">
               <Button asChild>
-                <Link href="/contact">Get Started</Link>
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/pricing">Our Pricing</Link>
               </Button>
             </div>
           </div>

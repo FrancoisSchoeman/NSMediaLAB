@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function FAQsPage() {
   return (
-    <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between">
+    <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
@@ -53,7 +53,7 @@ export default function FAQsPage() {
             className="text-lg w-full text-left"
           >
             <AccordionItem value="item-1">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 Do I really need social media marketing for my business?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -67,7 +67,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-2">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 Which platforms should I be on?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -83,7 +83,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-3">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 What kind of content can you create?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -108,7 +108,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-4">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 I&apos;m on a tight budget. Can you still help me?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -122,7 +122,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-5">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 What kind of results can I expect?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -137,7 +137,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-6">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 Do you offer paid advertising services?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">
@@ -151,7 +151,7 @@ export default function FAQsPage() {
             </AccordionItem>
 
             <AccordionItem value="item-7">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-left">
                 Do you offer free consultations?
               </AccordionTrigger>
               <AccordionContent className="text-lg text-left">

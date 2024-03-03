@@ -28,7 +28,7 @@ export default function PricingPage() {
   const pricing = data.pricing;
 
   return (
-    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center">
+    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4">
@@ -45,7 +45,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 lg:gap-8 sm:grid-cols-3 text-left">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-3 text-left">
             {pricing.map((price: Price, index: number) => (
               <div
                 key={index}

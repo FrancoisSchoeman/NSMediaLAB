@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between">
+    <div className="my-16 flex min-h-screen relative w-full h-full flex-col sm:items-center justify-between">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">

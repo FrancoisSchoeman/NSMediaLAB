@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={`${GeistSans.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto">
+          <main className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto z-10">
             {children}
           </main>
           <Toaster />

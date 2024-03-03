@@ -17,7 +17,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "./ui/textarea";
-import { useEffect } from "react";
+import { useState } from "react";
+import { useReCaptcha } from "next-recaptcha-v3";
 
 const formSchema = z.object({
   name: z.string().max(100),
@@ -29,12 +30,10 @@ const formSchema = z.object({
 export function ContactForm() {
   const { toast } = useToast();
 
+  // Import 'executeRecaptcha' using 'useReCaptcha' hook
+  const { executeRecaptcha } = useReCaptcha();
+
   // TODO: Add reCAPTCHA
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY";
-  //   document.body.appendChild(script);
-  // }, []);
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,11 +47,15 @@ export function ContactForm() {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values.name);
-    console.log(values.email);
-    console.log(values.phone);
-    console.log(values.message);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Generate ReCaptcha token
+    const token = await executeRecaptcha("form_submit");
+
+    // console.log(values.name);
+    // console.log(values.email);
+    // console.log(values.phone);
+    // console.log(values.message);
+    // console.log(token);
 
     fetch("https://nsmedialab.co.za/mailer.php", {
       method: "POST",
@@ -64,13 +67,12 @@ export function ContactForm() {
         email: values.email,
         phone: values.phone,
         message: values.message,
-        // TODO: Add reCAPTCHA
-        // recaptchaResponse: recaptchaToken, // obtained from reCAPTCHA execution
+        "g-recaptcha-response": token,
       }),
     })
       .then((response) => response.text())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         toast({
           title: "Form submitted!",
           description: "We will be in touch soon.",
@@ -80,7 +82,7 @@ export function ContactForm() {
         console.error("Error:", error);
         toast({
           title: "Form submission failed!",
-          description: "Please try again later.",
+          description: error,
         });
       });
   }
