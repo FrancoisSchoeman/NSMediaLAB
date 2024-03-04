@@ -20,6 +20,8 @@ import { Textarea } from "./ui/textarea";
 import { useState } from "react";
 import { useReCaptcha } from "next-recaptcha-v3";
 
+import { RotatingSquare } from "react-loader-spinner";
+
 const formSchema = z.object({
   name: z.string().max(100),
   email: z.string().email(),
@@ -28,12 +30,11 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   // Import 'executeRecaptcha' using 'useReCaptcha' hook
   const { executeRecaptcha } = useReCaptcha();
-
-  // TODO: Add reCAPTCHA
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -48,6 +49,8 @@ export function ContactForm() {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+
     // Generate ReCaptcha token
     const token = await executeRecaptcha("form_submit");
 
@@ -73,6 +76,9 @@ export function ContactForm() {
       .then((response) => response.text())
       .then((data) => {
         // console.log(data);
+
+        setIsLoading(false);
+
         toast({
           title: "Form submitted!",
           description: "We will be in touch soon.",
@@ -80,9 +86,12 @@ export function ContactForm() {
       })
       .catch((error) => {
         console.error("Error:", error);
+
+        setIsLoading(false);
+
         toast({
           title: "Form submission failed!",
-          description: error,
+          description: error.message,
         });
       });
   }
@@ -151,7 +160,19 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        {isLoading ? (
+          <RotatingSquare
+            visible={true}
+            height="50"
+            width="50"
+            color="#6d28d9"
+            ariaLabel="rotating-square-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        ) : (
+          <Button type="submit">Submit</Button>
+        )}
       </form>
     </Form>
   );

@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   description:
     "Discover answers to your burning questions about social media marketing, our processes, and how you can start working with NS MediaLAB to boost your online presence.",
   keywords:
-    "social media marketing South Africa, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, reporting, affordable social media services",
+    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
 };
 
 export default function FAQsPage() {
   return (
     <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="mb-4 text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -44,7 +44,7 @@ export default function FAQsPage() {
       </section>
 
       <section className="w-full">
-        <Separator className="mt-16" />
+        <Separator className="mt-6 sm:mt-16" />
 
         <div>
           <Accordion
@@ -179,9 +179,9 @@ export default function FAQsPage() {
               Get In Touch
             </h2>
             <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Ready to take your social media to the next level? Contact NS
-              MediaLAB today to start crafting a strategy that speaks to your
-              brand&apos;s unique voice and goals.
+              Eager to elevate your social media game? Reach out to NS MediaLAB
+              now to kickstart the development of a strategy that aligns with
+              your brand&apos;s singular voice and ambitions.
             </p>
             <div className="py-4">
               <Button asChild>

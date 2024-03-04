@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   description:
     "NS MediaLAB is more than just a business; it&apos;s a passion project born out of a love for connecting brands with their audiences on social media.",
   keywords:
-    "social media marketing South Africa, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, reporting, affordable social media services",
+    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
 };
 
 export default function AboutPage() {
   return (
     <div className="my-16 flex min-h-screen relative w-full h-full flex-col sm:items-center justify-between">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="mb-4 text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -64,9 +64,9 @@ export default function AboutPage() {
               Get In Touch
             </h2>
             <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Ready to take your social media to the next level? Contact NS
-              MediaLAB today to start crafting a strategy that speaks to your
-              brand&apos;s unique voice and goals.
+              Eager to elevate your social media presence? Get in touch with NS
+              MediaLAB today to begin devising a strategy that resonates with
+              your brand&apos;s distinctive voice and objectives.
             </p>
             <div className="py-4">
               <Button asChild>

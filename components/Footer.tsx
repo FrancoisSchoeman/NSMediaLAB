@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center justify-center w-full h-24">
       <Separator className="mb-6" />
-      <p className="text-sm text-muted-foreground">
+      <span className="text-sm text-muted-foreground flex flex-wrap justify-center gap-1 items-center">
         Copyright &copy; {currentYear}{" "}
         <a
           href="https://nsmedialab.co.za/"
@@ -36,7 +36,22 @@ export default function Footer() {
         >
           this guy
         </a>
-      </p>
+      </span>
+      <span className="text-sm text-muted-foreground flex flex-wrap justify-center gap-1 items-center mt-4">
+        <a
+          href="/privacy-policy"
+          className="text-accent-foreground hover:underline"
+        >
+          Privacy Policy
+        </a>
+        {" | "}
+        <a
+          href="/terms-of-service"
+          className="text-accent-foreground hover:underline"
+        >
+          Terms of Service
+        </a>
+      </span>
     </footer>
   );
 }

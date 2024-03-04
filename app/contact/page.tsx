@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "Ready to chat? Reach out through our contact form, email, or phone. Let&apos;s make your social media goals a reality together.",
   keywords:
-    "social media marketing South Africa, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, reporting, affordable social media services",
+    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
 };
 
 export default function ContactPage() {
@@ -26,7 +26,7 @@ export default function ContactPage() {
     <ReCaptchaProvider reCaptchaKey="6LcNlogpAAAAANoTgI-aJf47IdQqaX9sN4LqQdaa">
       <div className="grid gap-4 md:grid-cols-2 md:gap-16 my-16 relative w-full h-full">
         <div>
-          <div className="mb-16">
+          <div className="mb-6 sm:mb-16">
             <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Contact Us
             </h1>
@@ -47,7 +47,7 @@ export default function ContactPage() {
             us using the details below.
           </p>
 
-          <ul className="my-16 max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <ul className="my-6 sm:my-16 max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
             <li>
               <a
                 href="mailto:nadia@nsmedialab.co.za?subject=New Message From NS MediaLAB Website"

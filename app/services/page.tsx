@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   description:
     "Dive deeper into our services with detailed descriptions of how we approach each platform, ensuring your business stands out in the digital crowd.",
   keywords:
-    "social media marketing South Africa, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, reporting, affordable social media services",
+    "social media marketing Still Bay, Facebook management, Instagram marketing Stilbaai, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
 };
 
 export default function ServicesPage() {
   return (
     <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -44,9 +44,9 @@ export default function ServicesPage() {
                 </li>
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
                   <strong>Platform expertise:</strong> Whether it&apos;s
-                  Facebook, Instagram, LinkedIn, Twitter, or even TikTok, we
-                  know the unique nuances of each platform to maximize your
-                  reach and engagement.
+                  Facebook, Instagram, YouTube, LinkedIn, Twitter, or even
+                  TikTok, we know the unique nuances of each platform to
+                  maximize your reach and engagement.
                 </li>
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
                   <strong>Community management:</strong> We&apos;ll respond to
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                 </li>
                 <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
                   <strong>Measurable results:</strong> Track your ad performance
-                  and see the ROI on your investment.
+                  and see the returns on your investment.
                 </li>
               </ul>
             </div>
@@ -181,11 +181,13 @@ export default function ServicesPage() {
               <Badge>Contact Us</Badge>
             </Link>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Ready to unlock the power of social media for your business?
+              Interested in leveraging the potential of social media for your
+              business?
             </h2>
             <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Contact NS MediaLAB today for a free consultation and see how we
-              can help you achieve your social media goals!
+              Contact NS MediaLAB today to arrange a free consultation, and
+              explore how we can support you in achieving your social media
+              objectives.
             </p>
             <div className="py-4">
               <Button asChild>

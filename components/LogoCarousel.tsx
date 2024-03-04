@@ -13,7 +13,7 @@ import {
 
 import Autoplay from "embla-carousel-autoplay";
 
-import data from "../public/data.json";
+import data from "../data.json";
 
 const images = data.images;
 

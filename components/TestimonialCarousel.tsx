@@ -8,9 +8,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
+import { StarFilledIcon } from "@radix-ui/react-icons";
 
-import data from "../public/data.json";
+import data from "../data.json";
 
 const reviews = data.reviews;
 
