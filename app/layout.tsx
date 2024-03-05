@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   openGraph: {
     images: "/og-image.jpg",
   },
+  other: {
+    // Bing Webmaster Tools
+    "msvalidate.01": "89E0EBD5DCE64D433C64F5C109F2E9C8",
+  },
 };
 
 export default function RootLayout({
