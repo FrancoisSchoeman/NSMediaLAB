@@ -26,4 +26,3 @@ jobs:
           password: ${{ secrets.password }}
           local-dir: ./build/
           server-dir: ./public_html/
-          dry-run: true
