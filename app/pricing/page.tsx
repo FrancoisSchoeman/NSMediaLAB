@@ -45,7 +45,7 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-3 text-left">
+          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-4 text-left">
             {pricing.map((price: Price, index: number) => (
               <div
                 key={index}

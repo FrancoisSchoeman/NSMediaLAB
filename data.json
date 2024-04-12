@@ -12,7 +12,7 @@
     },
     {
       "name": "Fia Fourie Jewellery | Stilbaai",
-      "review": "NS MediaLAB is professional and highly skilled, but also friendly and very easy to work with. They create engaging visuals and breathes new life into my social media pages. I have been working with them for almost two years, and would honestly be lost without them!",
+      "review": "NS MediaLAB is professional and highly skilled, but also friendly and very easy to work with. They create engaging visuals and breathe new life into my social media pages. I have been working with them for almost two years, and would honestly be lost without them!",
       "stars": 5
     },
     {
@@ -23,7 +23,7 @@
   ],
   "pricing": [
     {
-      "title": "1 Post/Week",
+      "title": "1 post/week",
       "price": "R350/month",
       "extra": "R100/month per extra platform",
       "features": [
@@ -35,8 +35,20 @@
       ]
     },
     {
-      "title": "3 Posts/Week",
-      "price": "R750/month",
+      "title": "2 posts/week",
+      "price": "R600/month",
+      "extra": "R100/month per extra platform",
+      "features": [
+        "2 posts/week",
+        "*1 platform",
+        "Content creation",
+        "Scheduling",
+        "Monthly report"
+      ]
+    },
+    {
+      "title": "3 posts/week",
+      "price": "R950/month",
       "extra": "R100/month per extra platform",
       "features": [
         "3 posts/week",
@@ -47,8 +59,8 @@
       ]
     },
     {
-      "title": "5 Posts/Week",
-      "price": "R1000/month",
+      "title": "5 posts/week",
+      "price": "R1500/month",
       "extra": "R100/month per extra platform",
       "features": [
         "5 posts/week",
