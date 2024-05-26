@@ -1,32 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { LottiePlayer } from "@/components/LottiePlayer";
-import { Metadata } from "next";
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge';
+import { LottiePlayer } from '@/components/LottiePlayer';
+import { Metadata } from 'next';
 
-import cube from "../../public/rubiks-cube.json";
-import data from "../../data.json";
+import cube from '../../public/rubiks-cube.json';
+import PricingCards from '@/components/PricingCards';
 
 export const metadata: Metadata = {
-  title: "Pricing | NS MediaLAB",
+  title: 'Pricing | NS MediaLAB',
   description:
-    "Looking to dominate Facebook, Instagram, and YouTube for your South African business? NS MediLAB offers expert social media marketing services including content creation, advertising campaigns, analytics & reporting, and strategy consultation. Free consultations available!",
+    'Looking to dominate Facebook, Instagram, and YouTube for your South African business? NS MediLAB offers expert social media marketing services including content creation, advertising campaigns, analytics & reporting, and strategy consultation. Free consultations available!',
   keywords:
-    "social media marketing Stilbaai, Instagram marketing Stilbaai, YouTube marketing Stilbaai, social media advertising Still Bay, Facebook ads Still Bay, Instagram ads Stilbaai, YouTube ads Stilbaai, affordable social media marketing South Africa",
+    'social media marketing Stilbaai, Instagram marketing Stilbaai, YouTube marketing Stilbaai, social media advertising Still Bay, Facebook ads Still Bay, Instagram ads Stilbaai, YouTube ads Stilbaai, affordable social media marketing South Africa',
 };
 
-interface Price {
-  title: string;
-  extra: string;
-  price: string;
-  features: string[];
-}
-
 export default function PricingPage() {
-  const pricing = data.pricing;
-
   return (
     <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
@@ -45,31 +36,8 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-4 text-left">
-            {pricing.map((price: Price, index: number) => (
-              <div
-                key={index}
-                className="bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
-              >
-                <h2 className="text-xl font-bold">{price.title}</h2>
-                <h3 className="text-lg font-bold">{price.price}</h3>
+          <PricingCards />
 
-                <ul className="list-disc ml-6">
-                  {price.features.map((feature: string, index: number) => (
-                    <li
-                      key={index}
-                      className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1"
-                    >
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
-                  *{price.extra}
-                </p>
-              </div>
-            ))}
-          </div>
           <Button asChild>
             <Link href="/contact">Contact Us</Link>
           </Button>

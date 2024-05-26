@@ -1,27 +1,40 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from '@/components/ui/carousel';
 
-import Autoplay from "embla-carousel-autoplay";
+import Autoplay from 'embla-carousel-autoplay';
 
-import data from "../data.json";
-
-const images = data.images;
+type Image = {
+  src: string;
+  alt: string;
+  facebook: string;
+};
 
 export default function LogoCarousel() {
+  const [images, setImages] = useState<Image[]>([]);
+
+  useEffect(() => {
+    fetch('../data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setImages(data.images);
+      });
+  }, []);
+
   return (
     <Carousel
       opts={{
-        align: "center",
+        align: 'center',
       }}
       orientation="horizontal"
       className="w-full"

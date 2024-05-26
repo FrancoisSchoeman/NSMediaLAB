@@ -1,24 +1,39 @@
-import * as React from "react";
+'use client';
 
-import { Card, CardContent } from "@/components/ui/card";
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { StarFilledIcon } from "@radix-ui/react-icons";
+} from '@/components/ui/carousel';
+import { StarFilledIcon } from '@radix-ui/react-icons';
 
-import data from "../data.json";
-
-const reviews = data.reviews;
+type Review = {
+  name: string;
+  review: string;
+  stars: number;
+};
 
 export default function TestimonialCarousel() {
+  const [reviews, setReviews] = useState<Review[]>([]);
+
+  useEffect(() => {
+    fetch('../data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setReviews(data.reviews);
+      });
+  }, []);
+
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       orientation="horizontal"
       className="w-full"
@@ -34,8 +49,8 @@ export default function TestimonialCarousel() {
                       key={star}
                       className={`w-4 h-4 ${
                         star <= review.stars
-                          ? "text-primary"
-                          : "text-muted-foreground"
+                          ? 'text-primary'
+                          : 'text-muted-foreground'
                       }`}
                     />
                   ))}
