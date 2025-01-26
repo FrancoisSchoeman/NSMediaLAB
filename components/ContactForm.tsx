@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { sendGTMEvent } from '@next/third-parties/google';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { createHash } from 'crypto';
 
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from '@/components/ui/use-toast';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -14,13 +16,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "./ui/textarea";
-import { useState } from "react";
-import { useReCaptcha } from "next-recaptcha-v3";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from './ui/textarea';
+import { useState } from 'react';
+import { useReCaptcha } from 'next-recaptcha-v3';
 
-import { RotatingSquare } from "react-loader-spinner";
+import { RotatingSquare } from 'react-loader-spinner';
 
 const formSchema = z.object({
   name: z.string().max(100),
@@ -40,10 +42,10 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
     },
   });
 
@@ -52,7 +54,7 @@ export function ContactForm() {
     setIsLoading(true);
 
     // Generate ReCaptcha token
-    const token = await executeRecaptcha("form_submit");
+    const token = await executeRecaptcha('form_submit');
 
     // console.log(values.name);
     // console.log(values.email);
@@ -60,17 +62,17 @@ export function ContactForm() {
     // console.log(values.message);
     // console.log(token);
 
-    fetch("https://nsmedialab.co.za/mailer.php", {
-      method: "POST",
+    fetch('https://nsmedialab.co.za/mailer.php', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
         name: values.name,
         email: values.email,
         phone: values.phone,
         message: values.message,
-        "g-recaptcha-response": token,
+        'g-recaptcha-response': token,
       }),
     })
       .then((response) => response.text())
@@ -80,17 +82,26 @@ export function ContactForm() {
         setIsLoading(false);
 
         toast({
-          title: "Form submitted!",
-          description: "We will be in touch soon.",
+          title: 'Form submitted!',
+          description: 'We will be in touch soon.',
+        });
+
+        sendGTMEvent({
+          event: 'contact_form_submit',
+          user_data: {
+            name: values.name,
+            email: createHash('sha256').update(values.email).digest('hex'),
+            phone: createHash('sha256').update(values.phone).digest('hex'),
+          },
         });
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error('Error:', error);
 
         setIsLoading(false);
 
         toast({
-          title: "Form submission failed!",
+          title: 'Form submission failed!',
           description: error.message,
         });
       });

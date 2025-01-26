@@ -15,6 +15,7 @@
 
 # production
 /build
+*.php
 
 # misc
 .DS_Store

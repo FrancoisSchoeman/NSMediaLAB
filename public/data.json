@@ -24,7 +24,7 @@
   "pricing": [
     {
       "title": "1 post/week",
-      "price": "R350/month",
+      "price": "R370/month",
       "extra": "R100/month per extra platform",
       "features": [
         "1 post/week",
@@ -36,7 +36,7 @@
     },
     {
       "title": "2 posts/week",
-      "price": "R600/month",
+      "price": "R640/month",
       "extra": "R100/month per extra platform",
       "features": [
         "2 posts/week",
@@ -48,7 +48,7 @@
     },
     {
       "title": "3 posts/week",
-      "price": "R950/month",
+      "price": "R1000/month",
       "extra": "R100/month per extra platform",
       "features": [
         "3 posts/week",
@@ -60,7 +60,7 @@
     },
     {
       "title": "5 posts/week",
-      "price": "R1500/month",
+      "price": "R1600/month",
       "extra": "R100/month per extra platform",
       "features": [
         "5 posts/week",
