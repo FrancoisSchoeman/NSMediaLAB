@@ -45,7 +45,16 @@ export default function RootLayout({
         <GoogleTagManager gtmId="GTM-P8C3JZJH" />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
-          <main className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto z-10">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded"
+          >
+            Skip to main content
+          </a>
+          <main
+            id="main-content"
+            className="px-4 sm:px-8 md:px-0 max-w-[1300px] mx-auto z-10"
+          >
             {children}
           </main>
           <Toaster />

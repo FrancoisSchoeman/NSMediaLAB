@@ -1,24 +1,61 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { LottiePlayer } from "@/components/LottiePlayer";
-import { Badge } from "@/components/ui/badge";
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { LottiePlayer } from '@/components/LottiePlayer';
+import { Badge } from '@/components/ui/badge';
 
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import cube from "../../public/rubiks-cube.json";
-import Link from "next/link";
+import cube from '../../public/rubiks-cube.json';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "About | NS MediaLAB",
+  title: 'About | NS MediaLAB',
   description:
-    "NS MediaLAB is more than just a business; it&apos;s a passion project born out of a love for connecting brands with their audiences on social media.",
+    'NS MediaLAB is more than just a business; it&apos;s a passion project born out of a love for connecting brands with their audiences on social media.',
   keywords:
-    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
+    'social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services',
 };
 
 export default function AboutPage() {
+  const years = new Date().getFullYear() - new Date('2021').getFullYear();
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About NS MediaLAB',
+    description:
+      "NS MediaLAB is more than just a business; it's a passion project born out of a love for connecting brands with their audiences on social media.",
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'NS MediaLAB',
+      description:
+        'Social media marketing services based in Stilbaai, Western Cape, serving over 35 small businesses since 2021.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Stilbaai',
+        addressRegion: 'Western Cape',
+        addressCountry: 'South Africa',
+      },
+      foundingDate: '2021',
+      numberOfEmployees: '1-10',
+      serviceArea: {
+        '@type': 'GeoCircle',
+        geoMidpoint: {
+          '@type': 'GeoCoordinates',
+          latitude: -34.3667,
+          longitude: 21.4167,
+        },
+        geoRadius: '100000',
+      },
+    },
+  };
+
   return (
     <div className="my-16 flex min-h-screen relative w-full h-full flex-col sm:items-center justify-between">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
@@ -34,8 +71,8 @@ export default function AboutPage() {
 
               <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
                 Based in the picturesque Stilbaai, Western Cape, we&apos;ve been
-                proudly serving over 45 small businesses since our inception 3
-                years ago.
+                proudly serving over 35 small businesses since our inception{' '}
+                {years} years ago.
               </p>
 
               <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">

@@ -18,8 +18,45 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Pricing | NS MediaLAB',
+    description:
+      'NS MediaLAB offers expert social media marketing services including content creation, advertising campaigns, analytics & reporting, and strategy consultation with flexible pricing packages.',
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'NS MediaLAB',
+      description:
+        'Expert social media marketing services for South African businesses',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Stilbaai',
+        addressRegion: 'Western Cape',
+        addressCountry: 'South Africa',
+      },
+      priceRange: 'R500-R5000',
+      serviceType: [
+        'Social Media Marketing',
+        'Content Creation',
+        'Advertising Campaigns',
+        'Analytics & Reporting',
+        'Strategy Consultation',
+        'Product & Lifestyle Photography',
+      ],
+      areaServed: {
+        '@type': 'Country',
+        name: 'South Africa',
+      },
+    },
+  };
+
   return (
     <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-center justify-center space-y-4">
@@ -31,7 +68,8 @@ export default function PricingPage() {
                 Looking to dominate Facebook, Instagram, and YouTube for your
                 South African business? NS MediaLAB offers expert social media
                 marketing services including content creation, advertising
-                campaigns, analytics & reporting, and strategy consultation.
+                campaigns, analytics & reporting, strategy consultation, and
+                product or lifestyle photography.
               </p>
             </div>
           </div>
@@ -68,7 +106,13 @@ export default function PricingPage() {
           </div>
 
           <div className="flex flex-col items-center space-y-4 justify-start">
-            <LottiePlayer src={cube} height="400px" width="400px" speed={0.5} />
+            <LottiePlayer
+              src={cube}
+              height="400px"
+              width="400px"
+              speed={0.5}
+              aria-label="Animated 3D cube representing social media growth"
+            />
           </div>
         </div>
       </section>

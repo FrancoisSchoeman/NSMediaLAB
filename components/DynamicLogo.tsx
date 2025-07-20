@@ -1,22 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import Link from "next/link";
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export function DynamicLogo() {
   const { theme } = useTheme();
   const [logoWidth, setLogoWidth] = useState(200);
   const [scrollPos, setScrollPos] = useState(0);
-  const [logoSrc, setLogoSrc] = useState("/logo-white.webp");
+  const [logoSrc, setLogoSrc] = useState('/logo-white.webp');
 
   useEffect(() => {
-    if (theme === "light") {
-      setLogoSrc("/logo-black.webp");
+    if (theme === 'light') {
+      setLogoSrc('/logo-black.webp');
     } else {
-      setLogoSrc("/logo-white.webp");
+      setLogoSrc('/logo-white.webp');
     }
   }, [theme]);
 
@@ -26,8 +26,8 @@ export function DynamicLogo() {
       setScrollPos(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {

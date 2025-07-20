@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/carousel';
 
 import Autoplay from 'embla-carousel-autoplay';
+import Image from 'next/image';
 
 type Image = {
   src: string;
@@ -55,10 +56,11 @@ export default function LogoCarousel() {
                   href={`${image.facebook}?utm_source=nsmedialab&utm_medium=logo_carousel`}
                   target="_blank"
                 >
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
                     width={100}
+                    height={100}
                     className="rounded bg-white"
                   />
                 </a>

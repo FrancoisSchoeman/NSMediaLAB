@@ -1,29 +1,67 @@
-import { ContactForm } from "@/components/ContactForm";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { ContactForm } from '@/components/ContactForm';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 import {
   EnvelopeClosedIcon,
   MobileIcon,
   CameraIcon,
   HomeIcon,
   OpenInNewWindowIcon,
-} from "@radix-ui/react-icons";
+} from '@radix-ui/react-icons';
 
-import { ReCaptchaProvider } from "next-recaptcha-v3";
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
-import { Metadata } from "next";
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Contact Us | NS MediaLAB",
+  title: 'Contact Us | NS MediaLAB',
   description:
-    "Ready to chat? Reach out through our contact form, email, or phone. Let&apos;s make your social media goals a reality together.",
+    'Ready to chat? Reach out through our contact form, email, or phone. Let&apos;s make your social media goals a reality together.',
   keywords:
-    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
+    'social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services',
 };
 
 export default function ContactPage() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact NS MediaLAB',
+    description:
+      'Contact NS MediaLAB for social media marketing services. Reach out through our contact form, email, or phone.',
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'NS MediaLAB',
+      telephone: '082 619 1100',
+      email: 'nadia@nsmedialab.co.za',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Stilbaai',
+        addressRegion: 'Western Cape',
+        addressCountry: 'South Africa',
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '082 619 1100',
+          contactType: 'customer service',
+          availableLanguage: ['English', 'Afrikaans'],
+        },
+        {
+          '@type': 'ContactPoint',
+          email: 'nadia@nsmedialab.co.za',
+          contactType: 'customer service',
+        },
+      ],
+    },
+  };
+
   return (
     <ReCaptchaProvider reCaptchaKey="6LcNlogpAAAAANoTgI-aJf47IdQqaX9sN4LqQdaa">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <div className="grid gap-4 md:grid-cols-2 md:gap-16 my-16 relative w-full h-full">
         <div>
           <div className="mb-6 sm:mb-16">
@@ -49,7 +87,7 @@ export default function ContactPage() {
 
           <ul className="my-6 sm:my-16 max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
             <li>
-              <a
+              <Link
                 href="mailto:nadia@nsmedialab.co.za?subject=New Message From NS MediaLAB Website"
                 className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
               >
@@ -57,13 +95,13 @@ export default function ContactPage() {
                   <EnvelopeClosedIcon width={20} height={20} />
                 </Badge>
                 nadia@nsmedialab.co.za
-              </a>
+              </Link>
             </li>
 
             <Separator className="mt-4" />
 
             <li>
-              <a
+              <Link
                 href="https://wa.me/27826191100"
                 target="_blank"
                 className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
@@ -72,13 +110,13 @@ export default function ContactPage() {
                   <MobileIcon width={20} height={20} />
                 </Badge>
                 WhatsApp
-              </a>
+              </Link>
             </li>
 
             <Separator className="mt-4" />
 
             <li>
-              <a
+              <Link
                 href="tel:0826191100"
                 className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
               >
@@ -86,7 +124,7 @@ export default function ContactPage() {
                   <MobileIcon width={20} height={20} />
                 </Badge>
                 082 619 1100
-              </a>
+              </Link>
             </li>
 
             <Separator className="mt-4" />
@@ -103,8 +141,8 @@ export default function ContactPage() {
             <Separator className="mt-4" />
 
             <li>
-              <a
-                href="https://nadianphotography.co.za/"
+              <Link
+                href="https://nadianphotography.co.za/?utm_source=nsmedialab&utm_medium=referral"
                 target="_blank"
                 className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
               >
@@ -112,7 +150,7 @@ export default function ContactPage() {
                   <CameraIcon width={20} height={20} />
                 </Badge>
                 nadianphotography.co.za <OpenInNewWindowIcon />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

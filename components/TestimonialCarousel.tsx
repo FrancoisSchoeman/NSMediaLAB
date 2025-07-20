@@ -21,14 +21,21 @@ type Review = {
 
 export default function TestimonialCarousel() {
   const [reviews, setReviews] = useState<Review[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('../data.json')
       .then((response) => response.json())
       .then((data) => {
         setReviews(data.reviews);
-      });
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
+
+  if (loading) {
+    return <div className="animate-pulse">Loading testimonials...</div>;
+  }
 
   return (
     <Carousel

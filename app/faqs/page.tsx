@@ -3,29 +3,75 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
 
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { LottiePlayer } from "@/components/LottiePlayer";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { LottiePlayer } from '@/components/LottiePlayer';
+import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import cube from "../../public/rubiks-cube.json";
+import cube from '../../public/rubiks-cube.json';
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | NS MediaLAB",
+  title: 'Frequently Asked Questions | NS MediaLAB',
   description:
-    "Discover answers to your burning questions about social media marketing, our processes, and how you can start working with NS MediaLAB to boost your online presence.",
+    'Discover answers to your burning questions about social media marketing, our processes, and how you can start working with NS MediaLAB to boost your online presence.',
   keywords:
-    "social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services",
+    'social media marketing Stilbaai, Facebook management, Instagram marketing, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services',
 };
 
 export default function FAQsPage() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    name: 'Frequently Asked Questions | NS MediaLAB',
+    description:
+      'Discover answers to your burning questions about social media marketing, our processes, and how you can start working with NS MediaLAB.',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do I really need social media marketing for my business?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'In short, yes! South Africans are highly active on social media, with almost 90% using platforms like Facebook and Instagram daily. This presents a massive opportunity to reach your target audience, build brand awareness, and boost sales.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which platforms should I be on?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The best platforms for your business depend on your target audience and industry. We can help you identify the right platforms and develop a tailored strategy to maximize your reach and engagement. Facebook excels at building community, Instagram is visual-driven, and YouTube is perfect for video content.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What kind of content can you create?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We create a variety of eye-catching and engaging content tailored to each platform, including graphics, videos, captions, stories, and promotional materials that resonate with your target audience.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: "I'm on a tight budget. Can you still help me?",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Absolutely! We offer flexible packages and transparent pricing to fit your needs and budget. We can also help you optimize your spending and measure your results to ensure you're getting the most bang for your buck.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="my-16 flex min-h-screen flex-col sm:items-center justify-between relative w-full h-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
         <div className="space-y-6 sm:space-y-12">
           <div className="flex flex-col items-start justify-center space-y-4">
@@ -191,7 +237,13 @@ export default function FAQsPage() {
           </div>
 
           <div className="flex flex-col items-center space-y-4 justify-start">
-            <LottiePlayer src={cube} height="400px" width="400px" speed={0.5} />
+            <LottiePlayer
+              src={cube}
+              height="400px"
+              width="400px"
+              speed={0.5}
+              aria-label="Animated 3D cube representing social media growth"
+            />
           </div>
         </div>
       </section>

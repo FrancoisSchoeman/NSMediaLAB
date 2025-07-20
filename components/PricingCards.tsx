@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { AnimatedCard } from './AnimatedCard';
 
 export default function PricingCards() {
   const [pricing, setPricing] = useState<Price[]>([]);
@@ -23,10 +24,7 @@ export default function PricingCards() {
   return (
     <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-4 text-left">
       {pricing.map((price: Price, index: number) => (
-        <div
-          key={index}
-          className="bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5"
-        >
+        <AnimatedCard key={index}>
           <h2 className="text-xl font-bold">{price.title}</h2>
           <h3 className="text-lg font-bold">{price.price}</h3>
 
@@ -40,10 +38,13 @@ export default function PricingCards() {
               </li>
             ))}
           </ul>
-          <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+          <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 pt-1">
             *{price.extra}
           </p>
-        </div>
+          <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 pb-1">
+            **Price varies per client needs
+          </p>
+        </AnimatedCard>
       ))}
     </div>
   );

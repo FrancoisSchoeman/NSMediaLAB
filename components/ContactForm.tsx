@@ -56,12 +56,6 @@ export function ContactForm() {
     // Generate ReCaptcha token
     const token = await executeRecaptcha('form_submit');
 
-    // console.log(values.name);
-    // console.log(values.email);
-    // console.log(values.phone);
-    // console.log(values.message);
-    // console.log(token);
-
     fetch('https://nsmedialab.co.za/mailer.php', {
       method: 'POST',
       headers: {
@@ -76,9 +70,7 @@ export function ContactForm() {
       }),
     })
       .then((response) => response.text())
-      .then((data) => {
-        // console.log(data);
-
+      .then(() => {
         setIsLoading(false);
 
         toast({
