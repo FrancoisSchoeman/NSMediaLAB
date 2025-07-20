@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/carousel';
 
 import Autoplay from 'embla-carousel-autoplay';
-import Image from 'next/image';
+import Link from 'next/link';
 
 type Image = {
   src: string;
@@ -52,18 +52,17 @@ export default function LogoCarousel() {
             <Card className="p-0 mx-2">
               <CardContent className="flex aspect-square items-center justify-center p-0">
                 {/* /client-logos/image.png */}
-                <a
-                  href={`${image.facebook}?utm_source=nsmedialab&utm_medium=logo_carousel`}
+                <Link
+                  href={`${image.facebook}?utm_source=nsmedialab&utm_medium=referral`}
                   target="_blank"
                 >
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
                     width={100}
-                    height={100}
                     className="rounded bg-white"
                   />
-                </a>
+                </Link>
               </CardContent>
             </Card>
           </CarouselItem>
