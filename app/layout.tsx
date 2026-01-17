@@ -10,6 +10,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 
 export const metadata: Metadata = {
   title: 'Expert Social Media Marketing in Stilbaai | NS MediaLAB',
@@ -41,9 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-ZA">
-      <body className={`${GeistSans.variable} font-sans`}>
+      <body className={`${GeistSans.variable} font-sans relative`}>
         <GoogleTagManager gtmId="GTM-P8C3JZJH" />
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          forcedTheme="light"
+        >
           <Header />
           <a
             href="#main-content"
@@ -59,6 +64,7 @@ export default function RootLayout({
           </main>
           <Toaster />
           <Footer />
+          <WhatsAppWidget />
         </ThemeProvider>
         <GoogleAnalytics gaId="G-1J2SRELXN8" />
       </body>

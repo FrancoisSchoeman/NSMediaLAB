@@ -88,7 +88,7 @@ export default function ServicesPage() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Services
               </h1>
-              <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Dive deeper into our services with detailed descriptions of how
                 we approach each platform, ensuring your business stands out in
                 the digital crowd.
@@ -100,18 +100,18 @@ export default function ServicesPage() {
             <AnimatedCard>
               <h3 className="text-lg font-bold">Social Media Management</h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Hands-off account management:</strong> Ditch the daily
                   posting grind and focus on running your business while we keep
                   your social media channels buzzing with engaging content.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Platform expertise:</strong> Whether it&apos;s
                   Facebook, Instagram, YouTube, LinkedIn, Twitter, or even
                   TikTok, we know the unique nuances of each platform to
                   maximize your reach and engagement.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Community management:</strong> We&apos;ll respond to
                   comments and messages promptly, fostering positive brand
                   interactions and building loyal followings.
@@ -122,17 +122,17 @@ export default function ServicesPage() {
             <AnimatedCard>
               <h3 className="text-lg font-bold">Content Creation</h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Eye-catching visuals:</strong> Say goodbye to stock
                   photos! We&apos;ll create stunning graphics, videos, and other
                   content that resonates with your target audience.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Compelling copy:</strong> Our wordsmiths craft
                   captivating captions, stories, and ads that grab attention and
                   drive action.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Authentic brand voice:</strong> We&apos;ll capture
                   your unique brand personality and translate it into engaging
                   social media content.
@@ -143,17 +143,17 @@ export default function ServicesPage() {
             <AnimatedCard>
               <h3 className="text-lg font-bold">Advertising Campaigns</h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Boost your reach & engagement:</strong> Take your
                   social media presence to the next level with paid advertising
                   campaigns on all major platforms.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Expert campaign management:</strong> We&apos;ll handle
                   everything from budget allocation to ad creation and
                   optimization.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Measurable results:</strong> Track your ad performance
                   and see the returns on your investment.
                 </li>
@@ -163,18 +163,18 @@ export default function ServicesPage() {
             <AnimatedCard>
               <h3 className="text-lg font-bold">Analytics & Reporting</h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Data-driven insights:</strong> We don&apos;t just post
                   and pray. We track key metrics and provide actionable insights
                   to help you understand what&apos;s working and what&apos;s
                   not.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Customizable reports:</strong> Get the data you need,
                   delivered in a format that&apos;s easy to understand and
                   digest.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Continuous improvement:</strong> We use data to
                   constantly refine your social media strategy for better
                   results.
@@ -185,17 +185,17 @@ export default function ServicesPage() {
             <AnimatedCard>
               <h3 className="text-lg font-bold">Strategy Consultation</h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Unclear social media goals?</strong> We&apos;ll help
                   you develop a clear and actionable social media strategy
                   aligned with your overall business objectives.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Industry expertise:</strong> Leverage our knowledge of
                   the South African social media landscape to create a winning
                   strategy.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Ongoing support:</strong> We&apos;ll be your ongoing
                   partner, providing guidance and support as your social media
                   presence grows.
@@ -208,17 +208,17 @@ export default function ServicesPage() {
                 Product & Lifestyle Photography
               </h3>
               <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Showcase your brand at its best:</strong>{' '}
                   High-quality, styled product and lifestyle shots that capture
                   attention and drive engagement.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>Tailored visual storytelling:</strong> Every image is
                   crafted to reflect your brand&apos;s identity and connect with
                   your target audience.
                 </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-gray-500 dark:text-gray-400 py-1">
+                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
                   <strong>From studio to on-location:</strong> Whether it&apos;s
                   clean studio shots or dynamic lifestyle settings, we deliver
                   visuals that sell.
@@ -250,7 +250,7 @@ export default function ServicesPage() {
               Interested in leveraging the potential of social media for your
               business?
             </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Contact NS MediaLAB today to arrange a free consultation, and
               explore how we can support you in achieving your social media
               objectives.

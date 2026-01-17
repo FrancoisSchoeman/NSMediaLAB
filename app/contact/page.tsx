@@ -68,7 +68,7 @@ export default function ContactPage() {
             <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
               Contact Us
             </h1>
-            <p className="mt-2 sm:mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+            <p className="mt-2 sm:mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl">
               Ready to chat? Reach out through our contact form, email, or
               phone. Let&apos;s make your social media goals a reality together.
             </p>
@@ -80,16 +80,16 @@ export default function ContactPage() {
             Contact Details
           </h2>
 
-          <p className="mt-2 sm:mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="mt-2 sm:mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl">
             If you have any questions or need assistance, feel free to contact
             us using the details below.
           </p>
 
-          <ul className="my-6 sm:my-16 max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <ul className="my-6 sm:my-16 max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             <li>
               <Link
                 href="mailto:nadia@nsmedialab.co.za?subject=New Message From NS MediaLAB Website"
-                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
+                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl"
               >
                 <Badge className="p-2 mr-2">
                   <EnvelopeClosedIcon width={20} height={20} />
@@ -104,7 +104,7 @@ export default function ContactPage() {
               <Link
                 href="https://wa.me/27826191100"
                 target="_blank"
-                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
+                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl"
               >
                 <Badge className="p-2 mr-2">
                   <MobileIcon width={20} height={20} />
@@ -118,7 +118,7 @@ export default function ContactPage() {
             <li>
               <Link
                 href="tel:0826191100"
-                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
+                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl"
               >
                 <Badge className="p-2 mr-2">
                   <MobileIcon width={20} height={20} />
@@ -130,7 +130,7 @@ export default function ContactPage() {
             <Separator className="mt-4" />
 
             <li>
-              <span className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+              <span className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl">
                 <Badge className="p-2 mr-2">
                   <HomeIcon width={20} height={20} />
                 </Badge>
@@ -144,7 +144,7 @@ export default function ContactPage() {
               <Link
                 href="https://nadianphotography.co.za/?utm_source=nsmedialab&utm_medium=referral"
                 target="_blank"
-                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
+                className="flex items-center gap-2 mt-4 mx-auto max-w-[700px] text-neutral-600 md:text-xl"
               >
                 <Badge className="p-2 mr-2">
                   <CameraIcon width={20} height={20} />

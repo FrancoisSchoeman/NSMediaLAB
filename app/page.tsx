@@ -4,12 +4,11 @@ import { LottiePlayer } from '@/components/LottiePlayer';
 import { Badge } from '@/components/ui/badge';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 import cube from '../public/rubiks-cube.json';
-import elevatingCube from '../public/rubiks-cube-elevating.json';
 import Link from 'next/link';
 import LogoCarousel from '@/components/LogoCarousel';
 import { LinkCard } from '@/components/LinkCard';
-import AnimatedTitle from '@/components/AnimatedTitle';
 import StatsSection from '@/components/StatsSection';
+import HeroSocialParallax from '@/components/HeroSocialParallax';
 
 export default function Home() {
   const structuredData = {
@@ -34,36 +33,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="min-h-full grid gap-4 md:grid-cols-2 md:gap-16 pt-16">
-        <div className="flex sm:justify-center flex-col">
-          <AnimatedTitle text="Amplify Your Brand with Social Media Marketing" />
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 mx-auto text-gray-500 md:text-xl dark:text-gray-400">
-            Hey there! At NS MediaLAB, we&apos;re passionate about making your
-            brand shine on social media. We take the time to get to know what
-            makes your brand unique, crafting personalized campaigns and
-            eye-catching posts for platforms like Facebook, Instagram, and
-            YouTube. Our mission? To create strategies that truly click with
-            your audience, spark engagement, and help your brand grow. Let’s
-            team up and make some waves!
-          </p>
-          <div className="my-8 sm:my-4 flex gap-4">
-            <Button asChild>
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/pricing">Our Pricing</Link>
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col items-center space-y-4 justify-center">
-          <LottiePlayer
-            src={elevatingCube}
-            height="400px"
-            width="400px"
-            speed={0.7}
-            aria-label="Animated 3D cube representing social media growth"
-          />
-        </div>
+      <section className="relative overflow-hidden rounded-3xl min-h-[72vh] flex items-center justify-center pt-8">
+        <HeroSocialParallax />
       </section>
 
       <Separator className="mb-16 sm:my-16" />
@@ -77,49 +48,48 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               What We Offer
             </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              At NS MediaLAB, we understand that each platform offers unique
-              possibilities. Whether it’s creating captivating content for
-              Facebook and Instagram or developing impactful video strategies
-              for YouTube, our services are carefully designed to meet your
-              specific needs. We believe in both organic and paid growth,
-              delivering tailored content, and harnessing the power of social
-              media storytelling to build meaningful connections with your
-              audience.
+            <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              I see social media as a Rubik’s Cube — each platform is a different face, and success happens when they all align. Facebook, Instagram, LinkedIn, YouTube, Google Ads — each holds unique potential for your brand. My goal is to connect them into a cohesive strategy that makes your digital presence work.
+</p>
+<p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+From posts and visuals to video strategies and targeted ad campaigns, I design every piece of content with purpose. I focus on both organic growth and paid campaigns, crafting strategies that bring structure to complexity, clarity to messaging, and storytelling that genuinely engages your audience.
+</p>
+<p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+Together, we’ll solve your social media cube, ensuring every platform interacts in harmony to drive engagement, visibility, and measurable growth.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
           <LinkCard href="/services">
             <h3 className="text-lg font-bold">Social Media Management</h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We manage your social media accounts, ensuring consistent and
               engaging content for your audience.
             </p>
           </LinkCard>
           <LinkCard href="/services">
             <h3 className="text-lg font-bold">Content Creation</h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We create high-quality content that resonates with your audience.
             </p>
           </LinkCard>
           <LinkCard href="/services">
             <h3 className="text-lg font-bold">Advertising Campaigns</h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We create and manage effective advertising campaigns to reach a
               wider audience and drive more traffic to your business.
             </p>
           </LinkCard>
           <LinkCard href="/services">
             <h3 className="text-lg font-bold">Analytics & Reporting</h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We provide detailed reports on your social media performance and
               insights on how to improve.
             </p>
           </LinkCard>
           <LinkCard href="/services">
             <h3 className="text-lg font-bold">Strategy Consultation</h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We provide strategic consultation to align your social media
               efforts with your business goals.
             </p>
@@ -128,7 +98,7 @@ export default function Home() {
             <h3 className="text-lg font-bold">
               Product & Lifestyle Photography
             </h3>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-gray-500 dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-sm text-neutral-600">
               We provide high-quality photography services to showcase your
               products or services.
             </p>
@@ -150,7 +120,7 @@ export default function Home() {
                 What Our Clients Have to Say
               </h2>
 
-              <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Hear from some our satisfied clients who have seen their digital
                 presence transform. From increased engagement rates to
                 significant follower growth, our testimonials speak to the
@@ -177,7 +147,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
             Some Of Our Clients
           </h2>
-          <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed sm:text-center lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+          <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed sm:text-center lg:text-base/relaxed xl:text-xl/relaxed">
             Our portfolio features a variety of clients who have experienced
             real business growth through strategic social media marketing,
             showcasing our successful partnerships.
@@ -204,7 +174,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Get In Touch
             </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Ready to take your social media to the next level? Contact NS
               MediaLAB today to start crafting a strategy that speaks to your
               brand&apos;s unique voice and goals.

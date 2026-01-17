@@ -79,7 +79,7 @@ export default function FAQsPage() {
               <h1 className="mb-4 text-3xl font-bold tracking-tighter sm:text-5xl">
                 FAQs
               </h1>
-              <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Discover answers to your burning questions about social media
                 marketing, our processes, and how you can start working with NS
                 MediaLAB to boost your online presence.
@@ -224,7 +224,7 @@ export default function FAQsPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Get In Touch
             </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Eager to elevate your social media game? Reach out to NS MediaLAB
               now to kickstart the development of a strategy that aligns with
               your brand&apos;s singular voice and ambitions.

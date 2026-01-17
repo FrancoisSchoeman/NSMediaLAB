@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Sheet,
@@ -6,9 +6,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/sheet';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const MobileMenu = ({
   menuItems,
@@ -19,7 +20,7 @@ export const MobileMenu = ({
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="outline">
-          <HamburgerMenuIcon style={{ height: "20px", width: "20px" }} />
+          <HamburgerMenuIcon style={{ height: '20px', width: '20px' }} />
         </Button>
       </SheetTrigger>
       <SheetContent>
@@ -30,12 +31,12 @@ export const MobileMenu = ({
           <ul className="flex flex-col gap-4">
             {menuItems.map((item, i) => (
               <li key={i}>
-                <a
+                <Link
                   href={item.href}
-                  className="dark:text-white hover:text-primary transition-colors text-gray-800 dark:hover:text-primary"
+                  className="dark:text-white hover:text-primary transition-colors text-neutral-800 dark:hover:text-primary"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

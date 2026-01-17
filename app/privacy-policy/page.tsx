@@ -46,17 +46,17 @@ export default function PrivacyPolicy() {
           <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
             Privacy Policy
           </h1>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
             Last Updated: 2024-04-03
           </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
             At NS MediaLAB, we are committed to protecting your privacy. This
             Privacy Policy outlines the types of information we collect from
             you, including information collected via our use of Google
             Analytics, Google reCaptcha V3, and through our contact form
             submissions, which are saved in our database.
           </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
             Please be assured that we do not sell any personal data to third
             parties. Our use of Google Analytics and Google reCaptcha V3 is to
             enhance your user experience and protect our site from spam and
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
             is used solely for the purpose of responding to your inquiries and
             providing you with the services you have requested.
           </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-gray-500 md:text-xl dark:text-gray-400">
+          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
             For more detailed information on how we use and protect your
             information, as well as your rights regarding your data, please
             contact us directly.

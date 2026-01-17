@@ -64,7 +64,7 @@ export default function PricingPage() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Pricing
               </h1>
-              <p className="max-w-[40ch] sm:max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Looking to dominate Facebook, Instagram, and YouTube for your
                 South African business? NS MediaLAB offers expert social media
                 marketing services including content creation, advertising
@@ -93,7 +93,7 @@ export default function PricingPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               Keen to harness the potential of social media for your business?
             </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Get in touch with NS MediaLAB today for a free consultation and
               discover how we can assist you in reaching your social media
               objectives!

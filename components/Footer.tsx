@@ -1,6 +1,7 @@
 'use client';
 
 import { Separator } from '@/components/ui/separator';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 const currentYear = new Date().getFullYear();
@@ -21,12 +22,12 @@ export default function Footer() {
       <Separator className="mb-6" />
       <span className="text-sm text-muted-foreground flex flex-wrap justify-center gap-1 items-center">
         Copyright &copy; {currentYear}{' '}
-        <a
+        <Link
           href="https://nsmedialab.co.za/"
           className="text-accent-foreground hover:underline"
         >
           NS MediaLAB
-        </a>{' '}
+        </Link>{' '}
         | Made with 💖 by{' '}
         <a
           href="https://www.fsdev.co.za/"
@@ -37,19 +38,19 @@ export default function Footer() {
         </a>
       </span>
       <span className="text-sm text-muted-foreground flex flex-wrap justify-center gap-1 items-center mt-4">
-        <a
+        <Link
           href="/privacy-policy"
           className="text-accent-foreground hover:underline"
         >
           Privacy Policy
-        </a>
+        </Link>
         {' | '}
-        <a
+        <Link
           href="/terms-of-service"
           className="text-accent-foreground hover:underline"
         >
           Terms of Service
-        </a>
+        </Link>
       </span>
     </footer>
   );

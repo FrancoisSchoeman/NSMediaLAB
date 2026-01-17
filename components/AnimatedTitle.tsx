@@ -21,7 +21,7 @@ export default function AnimatedTitle({
             <motion.h1
               key={char + index}
               className={cn(
-                'inline-block text-neutral-500 dark:text-neutral-200',
+                'inline-block text-neutral-700',
                 className
               )}
               initial={{ opacity: 0, filter: 'blur(4px)', rotateX: 90, y: 5 }}
