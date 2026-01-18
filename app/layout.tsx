@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | NS MediaLAB',
   },
   description:
-    'Transform your brand with NS MediaLAB\'s personalised social media marketing services. Based in Stilbaai, we help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!',
+    'Transform your brand with NS MediaLAB\'s personalised social media marketing services. Based in Stilbaai, i help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!',
   keywords: [
     'social media marketing Stilbaai',
     'Facebook marketing South Africa',
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
     locale: 'en_ZA',
     url: siteUrl,
     siteName: 'NS MediaLAB',
-    title: 'Expert Social Media Marketing in Stilbaai | NS MediaLAB',
+    title: 'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
     description:
-      'Transform your brand with personalised social media marketing. We help small businesses grow on Facebook, Instagram, YouTube & more. Free consultation available!',
+      'Transform your brand with personalised social media marketing. I help small businesses grow on Facebook, Instagram, YouTube & more. Free consultation available!',
     images: [
       {
         url: '/og-image.jpg',
@@ -76,9 +76,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Expert Social Media Marketing in Stilbaai | NS MediaLAB',
+    title: 'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
     description:
-      'Transform your brand with personalised social media marketing. We help small businesses grow on Facebook, Instagram, YouTube & more.',
+      'Transform your brand with personalised social media marketing. I help small businesses grow on Facebook, Instagram, YouTube & more.',
     images: ['/og-image.jpg'],
     creator: '@nsmedialab',
   },
@@ -146,7 +146,7 @@ const localBusinessSchema = {
   url: siteUrl,
   telephone: '+27826191100',
   email: 'nadia@nsmedialab.co.za',
-  priceRange: 'R500-R5000',
+  priceRange: 'R300-R3000',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Stilbaai',
@@ -161,7 +161,7 @@ const localBusinessSchema = {
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-    opens: '08:00',
+    opens: '09:00',
     closes: '17:00',
   },
 };

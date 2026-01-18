@@ -20,16 +20,16 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Expert Social Media Marketing in Stilbaai | NS MediaLAB',
+  title: 'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
   description:
-    "Transform your brand with NS MediaLAB's personalised social media marketing services. Based in Stilbaai, we help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!",
+    "Transform your brand with NS MediaLAB's personalised social media marketing services. Based in Stilbaai, I help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!",
 };
 
 const services = [
   {
     title: 'Social Media Management',
     description:
-      'Full account management across Facebook, Instagram, YouTube & more. We handle posting, engagement, and community building.',
+      'Full account management across Facebook, Instagram, YouTube & more. I handle posting, engagement, and community building.',
     icon: <Users className="h-6 w-6" />,
   },
   {
@@ -53,7 +53,7 @@ const services = [
   {
     title: 'Strategy Consultation',
     description:
-      'Expert guidance to align your social media efforts with your business goals.',
+      'Professional guidance to align your social media efforts with your business goals.',
     icon: <Lightbulb className="h-6 w-6" />,
   },
   {
@@ -108,7 +108,7 @@ export default function Home() {
       >
         <SectionHeader
           badge="Our Services"
-          title="What We Offer"
+          title="What I Offer"
           description="I see social media as a Rubik's Cube — each platform is a different face, and success happens when they all align. Let me help you solve yours."
         />
 
@@ -136,7 +136,7 @@ export default function Home() {
         <SectionHeader
           badge="Our Clients"
           title="Trusted by Local Businesses"
-          description="We've helped businesses across South Africa transform their social media presence."
+          description="I've helped businesses across South Africa transform their social media presence."
         />
         <div className="mt-8">
           <LogoCarousel />
@@ -152,7 +152,7 @@ export default function Home() {
       >
         <SectionHeader
           badge="Testimonials"
-          title="What Our Clients Say"
+          title="What My Clients Say"
           description="Hear from businesses who have transformed their digital presence with NS MediaLAB."
         />
 
@@ -164,7 +164,7 @@ export default function Home() {
 
         <div className="mt-12 text-center">
           <Button asChild variant="outline" size="lg">
-            <a href="/faqs">Read Our FAQs</a>
+            <a href="/faqs">Read My FAQs</a>
           </Button>
         </div>
       </SectionWrapper>
