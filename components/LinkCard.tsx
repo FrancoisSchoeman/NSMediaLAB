@@ -1,51 +1,70 @@
 'use client';
 
-import Link from 'next/link';
-import { useMotionValue, motion, useMotionTemplate } from 'motion/react';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import React from 'react';
+import { sendGTMEvent } from '@next/third-parties/google';
 
-export function LinkCard({
-  children,
-  href,
-}: {
+interface LinkCardProps {
   children: React.ReactNode;
   href: string;
-}) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  className?: string;
+  trackingLabel?: string;
+}
 
-  const background = useMotionTemplate`radial-gradient(200px circle at ${mouseX}px ${mouseY}px, rgba(244, 114, 182, 0.15), transparent 80%)`;
+export function LinkCard({ children, href, className, trackingLabel }: LinkCardProps) {
+  const handleClick = () => {
+    if (trackingLabel) {
+      sendGTMEvent({
+        event: 'service_click',
+        service_name: trackingLabel,
+      });
+    }
+  };
 
   return (
-    <div className="relative inline-flex overflow-hidden rounded-xl p-px">
-      <span
-        className={cn(
-          'absolute inset-[-1000%] bg-[conic-gradient(from_90deg_at_50%_50%,#4e4e4e_0%,#d4d4d4_50%,#414141_100%)]',
-          'animate-[spin_2s_linear_infinite] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#c2c2c2_0%,#505050_50%,#bebebe_100%)]'
-        )}
-      />
-      <Link
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ y: -4 }}
+      className="h-full"
+    >
+      <a
         href={href}
-        onMouseMove={(e) => {
-          const { left, top } = e.currentTarget.getBoundingClientRect();
-
-          mouseX.set(e.clientX - left);
-          mouseY.set(e.clientY - top);
-        }}
-        className="group relative w-full overflow-hidden rounded-xl bg-neutral-50 text-left dark:bg-gray-950 dark:text-neutral-100"
+        onClick={handleClick}
+        className={cn(
+          'group block h-full p-6 rounded-xl',
+          'bg-white border border-border/50',
+          'shadow-sm hover:shadow-lg',
+          'transition-all duration-300',
+          className
+        )}
       >
-        <div className="absolute right-5 top-0 h-px w-full bg-gradient-to-l from-transparent via-neutral-400/30 via-10% to-transparent dark:via-white/30" />
-        <motion.div
-          className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-          style={{
-            background: background,
-          }}
-        />
-        <div className="relative flex flex-col gap-3 min-h-36 px-4 py-5">
-          {children}
-        </div>
-      </Link>
-    </div>
+        <div className="flex flex-col gap-3 h-full">{children}</div>
+      </a>
+    </motion.div>
+  );
+}
+
+// Service Card variant with icon
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  href: string;
+}
+
+export function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
+  return (
+    <LinkCard href={href} trackingLabel={title}>
+      <div className="p-3 rounded-lg bg-primary/10 w-fit text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+        {icon}
+      </div>
+      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+        {title}
+      </h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+    </LinkCard>
   );
 }

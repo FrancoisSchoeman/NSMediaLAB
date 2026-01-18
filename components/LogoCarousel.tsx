@@ -13,7 +13,6 @@ import {
 } from '@/components/ui/carousel';
 
 import Autoplay from 'embla-carousel-autoplay';
-import Link from 'next/link';
 
 type Image = {
   src: string;
@@ -47,12 +46,10 @@ export default function LogoCarousel() {
     >
       <CarouselContent className="-ml-1 mb-1">
         {images.map((image, index) => (
-          // <CarouselItem key={index} className="h-full max-w-lg text-left">
-          <CarouselItem key={index} className="pl-1 basis-1/7">
+          <CarouselItem key={index} className="pl-1 basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/7">
             <Card className="p-0 mx-2">
               <CardContent className="flex aspect-square items-center justify-center p-0">
-                {/* /client-logos/image.png */}
-                <Link
+                <a
                   href={`${image.facebook}?utm_source=nsmedialab&utm_medium=referral`}
                   target="_blank"
                 >
@@ -62,14 +59,16 @@ export default function LogoCarousel() {
                     width={100}
                     className="rounded bg-white"
                   />
-                </Link>
+                </a>
               </CardContent>
             </Card>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <div className="flex justify-center gap-4 mt-4">
+        <CarouselPrevious className="static translate-y-0" />
+        <CarouselNext className="static translate-y-0" />
+      </div>
     </Carousel>
   );
 }

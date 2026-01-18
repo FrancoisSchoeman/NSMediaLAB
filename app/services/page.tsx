@@ -1,20 +1,133 @@
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { LottiePlayer } from '@/components/LottiePlayer';
-import { Badge } from '@/components/ui/badge';
 import { Metadata } from 'next';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 import { AnimatedCard } from '@/components/AnimatedCard';
-
-import cube from '../../public/rubiks-cube.json';
+import {
+  Users,
+  PenTool,
+  BarChart3,
+  Megaphone,
+  Lightbulb,
+  Camera,
+  CheckCircle2,
+  MapPin,
+  Target,
+} from 'lucide-react';
+import bgImage from '@/public/bg-image.webp';
 
 export const metadata: Metadata = {
-  title: 'Services | NS MediaLAB',
+  title: 'Services',
   description:
-    'Dive deeper into our services with detailed descriptions of how we approach each platform, ensuring your business stands out in the digital crowd.',
+    'Comprehensive social media marketing services including management, content creation, advertising campaigns, Google Ads, Google My Business, analytics, strategy consultation, and professional photography.',
   keywords:
-    'social media marketing Still Bay, Facebook management, Instagram marketing Stilbaai, content creation, social media ads, social media strategy, South African businesses, analytics, affordable social media services',
+    'social media management, content creation, advertising campaigns, Google Ads, Google My Business, analytics reporting, strategy consultation, product photography, lifestyle photography, South Africa',
 };
+
+const services = [
+  {
+    title: 'Social Media Management',
+    icon: <Users className="h-8 w-8" />,
+    description:
+      'Full account management across all major platforms. We handle the daily grind so you can focus on your business.',
+    features: [
+      'Hands-off account management',
+      'Multi-platform expertise (Facebook, Instagram, YouTube, LinkedIn, TikTok)',
+      'Community management & engagement',
+      'Consistent posting schedule',
+      'Audience growth strategies',
+    ],
+  },
+  {
+    title: 'Content Creation',
+    icon: <PenTool className="h-8 w-8" />,
+    description:
+      'Eye-catching visuals and compelling copy that resonates with your target audience and tells your brand story.',
+    features: [
+      'Custom graphics & visuals',
+      'Engaging video content',
+      'Compelling captions & copywriting',
+      'Story & reel creation',
+      'Authentic brand voice development',
+    ],
+  },
+  {
+    title: 'Advertising Campaigns',
+    icon: <Megaphone className="h-8 w-8" />,
+    description:
+      'Strategic paid advertising to boost your reach, engagement, and conversions on social media platforms.',
+    features: [
+      'Facebook & Instagram Ads',
+      'TikTok & LinkedIn Ads',
+      'Budget optimization',
+      'Audience targeting',
+      'A/B testing & optimization',
+    ],
+  },
+  {
+    title: 'Google Ads',
+    icon: <Target className="h-8 w-8" />,
+    description:
+      'Drive targeted traffic and conversions with expertly managed Google Ads campaigns across Search, Display, and YouTube.',
+    features: [
+      'Search & Display campaigns',
+      'YouTube video ads',
+      'Keyword research & optimization',
+      'Conversion tracking setup',
+      'Performance monitoring & reporting',
+    ],
+  },
+  {
+    title: 'Google My Business',
+    icon: <MapPin className="h-8 w-8" />,
+    description:
+      'Optimize your local presence and help customers find you with a fully managed Google Business Profile.',
+    features: [
+      'Profile setup & optimization',
+      'Regular posts & updates',
+      'Review management & responses',
+      'Photo & content updates',
+      'Local SEO optimization',
+    ],
+  },
+  {
+    title: 'Analytics & Reporting',
+    icon: <BarChart3 className="h-8 w-8" />,
+    description:
+      'Data-driven insights to understand what\'s working and continuously improve your social media strategy.',
+    features: [
+      'Monthly performance reports',
+      'Key metric tracking',
+      'Competitor analysis',
+      'ROI measurement',
+      'Actionable recommendations',
+    ],
+  },
+  {
+    title: 'Strategy Consultation',
+    icon: <Lightbulb className="h-8 w-8" />,
+    description:
+      'Expert guidance to align your social media efforts with your business goals and create a winning strategy.',
+    features: [
+      'Social media audit',
+      'Goal setting & planning',
+      'Platform recommendations',
+      'Content calendar creation',
+      'Ongoing strategic support',
+    ],
+  },
+  {
+    title: 'Product & Lifestyle Photography',
+    icon: <Camera className="h-8 w-8" />,
+    description:
+      'Professional photography services to showcase your products or services in the best light.',
+    features: [
+      'Product photography',
+      'Lifestyle & brand shoots',
+      'Social media content photos',
+      'Event coverage',
+      'Photo editing & retouching',
+    ],
+  },
+];
 
 export default function ServicesPage() {
   const structuredData = {
@@ -22,7 +135,7 @@ export default function ServicesPage() {
     '@type': 'Service',
     name: 'Social Media Marketing Services | NS MediaLAB',
     description:
-      'Comprehensive social media marketing services including management, content creation, advertising campaigns, analytics, strategy consultation, and photography.',
+      'Comprehensive social media marketing services including management, content creation, advertising campaigns, Google Ads, Google My Business, analytics, strategy consultation, and photography.',
     provider: {
       '@type': 'LocalBusiness',
       name: 'NS MediaLAB',
@@ -30,249 +143,133 @@ export default function ServicesPage() {
         '@type': 'PostalAddress',
         addressLocality: 'Stilbaai',
         addressRegion: 'Western Cape',
-        addressCountry: 'South Africa',
+        addressCountry: 'ZA',
       },
-      telephone: '082 619 1100',
-      email: 'nadia@nsmedialab.co.za',
     },
-    serviceType: [
-      'Social Media Management',
-      'Content Creation',
-      'Advertising Campaigns',
-      'Analytics & Reporting',
-      'Strategy Consultation',
-      'Product & Lifestyle Photography',
-    ],
+    serviceType: services.map((s) => s.title),
     areaServed: {
       '@type': 'Country',
       name: 'South Africa',
     },
-    availableChannel: [
-      {
-        '@type': 'ServiceChannel',
-        name: 'Facebook Management',
-      },
-      {
-        '@type': 'ServiceChannel',
-        name: 'Instagram Marketing',
-      },
-      {
-        '@type': 'ServiceChannel',
-        name: 'YouTube Marketing',
-      },
-      {
-        '@type': 'ServiceChannel',
-        name: 'LinkedIn Marketing',
-      },
-      {
-        '@type': 'ServiceChannel',
-        name: 'Twitter Marketing',
-      },
-      {
-        '@type': 'ServiceChannel',
-        name: 'TikTok Marketing',
-      },
-    ],
   };
 
   return (
-    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
-        <div className="space-y-6 sm:space-y-12">
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Services
+    <div
+      className="min-h-screen bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${bgImage.src})` }}
+    >
+      <div className="min-h-screen bg-white/70 backdrop-blur-[8px] pt-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+
+        {/* Hero Section */}
+        <section className="text-center">
+          <div className="px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 mx-auto max-w-7xl flex items-center justify-center">
+            <div className="max-w-3xl">
+              <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary backdrop-blur-xl bg-gradient-to-r from-black/10 to-black/5 border border-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] rounded-full">
+                Our Services
+              </span>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+                Everything You Need to Dominate Social Media
               </h1>
-              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Dive deeper into our services with detailed descriptions of how
-                we approach each platform, ensuring your business stands out in
-                the digital crowd.
+              <p className="mt-4 text-lg text-gray-700">
+                From strategy to execution, I offer comprehensive services designed 
+                to help your business thrive on social media. Each service is tailored 
+                to your unique needs and goals.
               </p>
             </div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-max">
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">Social Media Management</h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Hands-off account management:</strong> Ditch the daily
-                  posting grind and focus on running your business while we keep
-                  your social media channels buzzing with engaging content.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Platform expertise:</strong> Whether it&apos;s
-                  Facebook, Instagram, YouTube, LinkedIn, Twitter, or even
-                  TikTok, we know the unique nuances of each platform to
-                  maximize your reach and engagement.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Community management:</strong> We&apos;ll respond to
-                  comments and messages promptly, fostering positive brand
-                  interactions and building loyal followings.
-                </li>
-              </ul>
-            </AnimatedCard>
+        {/* Services Grid */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <AnimatedCard key={index} delay={index * 0.1} className="h-full">
+                  <div className="flex flex-col h-full">
+                    {/* Icon & Title */}
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="p-3 rounded-full backdrop-blur-xl bg-gradient-to-br from-white/70 to-white/50 border border-white/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)] text-primary flex-shrink-0">
+                        {service.icon}
+                      </div>
+                      <div>
+                        <h2 className="text-xl font-semibold text-gray-900">
+                          {service.title}
+                        </h2>
+                        <p className="text-gray-700 mt-1">{service.description}</p>
+                      </div>
+                    </div>
 
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">Content Creation</h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Eye-catching visuals:</strong> Say goodbye to stock
-                  photos! We&apos;ll create stunning graphics, videos, and other
-                  content that resonates with your target audience.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Compelling copy:</strong> Our wordsmiths craft
-                  captivating captions, stories, and ads that grab attention and
-                  drive action.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Authentic brand voice:</strong> We&apos;ll capture
-                  your unique brand personality and translate it into engaging
-                  social media content.
-                </li>
-              </ul>
-            </AnimatedCard>
+                    {/* Features */}
+                    <ul className="space-y-2 mt-4 flex-grow">
+                      {service.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-start gap-2 text-sm text-gray-700"
+                        >
+                          <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">Advertising Campaigns</h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Boost your reach & engagement:</strong> Take your
-                  social media presence to the next level with paid advertising
-                  campaigns on all major platforms.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Expert campaign management:</strong> We&apos;ll handle
-                  everything from budget allocation to ad creation and
-                  optimization.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Measurable results:</strong> Track your ad performance
-                  and see the returns on your investment.
-                </li>
-              </ul>
-            </AnimatedCard>
+                    {/* CTA */}
+                    <div className="mt-6 pt-4 border-t border-white/40">
+                      <Button asChild variant="outline" className="w-full">
+                        <a href={`/contact?service=${encodeURIComponent(service.title)}`}>
+                          Get a Quote for {service.title}
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </AnimatedCard>
+              ))}
+            </div>
 
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">Analytics & Reporting</h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Data-driven insights:</strong> We don&apos;t just post
-                  and pray. We track key metrics and provide actionable insights
-                  to help you understand what&apos;s working and what&apos;s
-                  not.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Customizable reports:</strong> Get the data you need,
-                  delivered in a format that&apos;s easy to understand and
-                  digest.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Continuous improvement:</strong> We use data to
-                  constantly refine your social media strategy for better
-                  results.
-                </li>
-              </ul>
-            </AnimatedCard>
-
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">Strategy Consultation</h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Unclear social media goals?</strong> We&apos;ll help
-                  you develop a clear and actionable social media strategy
-                  aligned with your overall business objectives.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Industry expertise:</strong> Leverage our knowledge of
-                  the South African social media landscape to create a winning
-                  strategy.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Ongoing support:</strong> We&apos;ll be your ongoing
-                  partner, providing guidance and support as your social media
-                  presence grows.
-                </li>
-              </ul>
-            </AnimatedCard>
-
-            <AnimatedCard>
-              <h3 className="text-lg font-bold">
-                Product & Lifestyle Photography
-              </h3>
-              <ul className="list-disc ml-6">
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Showcase your brand at its best:</strong>{' '}
-                  High-quality, styled product and lifestyle shots that capture
-                  attention and drive engagement.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>Tailored visual storytelling:</strong> Every image is
-                  crafted to reflect your brand&apos;s identity and connect with
-                  your target audience.
-                </li>
-                <li className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 py-1">
-                  <strong>From studio to on-location:</strong> Whether it&apos;s
-                  clean studio shots or dynamic lifestyle settings, we deliver
-                  visuals that sell.
-                </li>
-              </ul>
-            </AnimatedCard>
-          </div>
-
-          <div className="my-4 flex sm:justify-center gap-4">
-            <Button asChild>
-              <Link href="/pricing">Our Pricing</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/faqs">Go To FAQs</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <Separator className="my-16 sm:mb-0" />
-
-      <section className="w-full">
-        <div className="grid gap-4 md:grid-cols-2 md:gap-16">
-          <div className="flex flex-col items-start justify-center space-y-2">
-            <Link href="/contact">
-              <Badge>Contact Us</Badge>
-            </Link>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Interested in leveraging the potential of social media for your
-              business?
-            </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Contact NS MediaLAB today to arrange a free consultation, and
-              explore how we can support you in achieving your social media
-              objectives.
-            </p>
-            <div className="py-4">
-              <Button asChild>
-                <Link href="/contact">Contact Us</Link>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg">
+                <a href="/pricing">View Pricing Packages</a>
               </Button>
             </div>
           </div>
+        </section>
 
-          <div className="flex flex-col items-center space-y-4 justify-start">
-            <LottiePlayer
-              src={cube}
-              height="400px"
-              width="400px"
-              speed={0.5}
-              aria-label="Animated 3D cube representing social media growth"
-            />
+        {/* CTA Section */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto p-8 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/60 via-white/40 to-white/30 border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.8)]">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Not Sure What You Need?
+              </h2>
+              <p className="mt-4 text-gray-700">
+                Let&apos;s chat! I offer free consultations to understand your business and recommend the best services for your goals.
+              </p>
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                {['Personalized recommendations', 'No-obligation consultation', 'Custom packages available'].map((benefit, index) => (
+                  <span
+                    key={index}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 text-sm text-gray-700 backdrop-blur-xl bg-gradient-to-r from-black/10 to-black/5 border border-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] rounded-full"
+                  >
+                    <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
+                    {benefit}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild size="lg">
+                  <a href="/contact">Schedule a Free Call</a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a href="/faqs">View FAQs</a>
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

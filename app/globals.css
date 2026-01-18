@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix for dialog/modal scroll lock issues */
 body[style='pointer-events: none;'] {
   position: static !important;
   padding-left: 0 !important;
@@ -13,52 +14,69 @@ body[style='pointer-events: none;'] {
 
 @layer base {
   :root {
-    --background: 60 60% 99.02%;
-    --foreground: 0 0% 25.1%;
-    --card: 60 60% 99.02%;
-    --card-foreground: 0 0% 25.1%;
-    --popover: 60 60% 99.02%;
-    --popover-foreground: 0 0% 25.1%;
-    /* --primary: 215, 100%, 50%; */
-    /* --primary: 335, 100%, 50%; */
-    --primary: 215, 100%, 50%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 60 12.2% 83.92%;
-    --input: 60 12.2% 83.92%;
-    --ring: 215, 100%, 50%;
+    /* Base Colors - Clean Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    
+    /* Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    /* Popover Colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary - Red (Rubik's Cube) */
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Soft Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    /* Muted - Light Gray */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Accent - Subtle Gray */
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    /* Destructive - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 85% 50%;
+    
+    /* Radius */
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 25.1%;
-    --foreground: 210 20% 98%;
-    --card: 0 0% 25.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 0 0% 25.1%;
-    --popover-foreground: 210 20% 98%;
-    /* --primary: 215, 100%, 50%; */
-    /* --primary: 335, 100%, 50%; */
-    --primary: 215, 100%, 50%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 215, 100%, 50%;
+    
+    /* ===== Rubik's Cube Accent Colors ===== */
+    /* Use sparingly for decorative elements only */
+    --cube-red: 0 100% 50%;
+    --cube-orange: 25 100% 50%;
+    --cube-yellow: 48 100% 50%;
+    --cube-green: 120 100% 35%;
+    --cube-blue: 217 91% 60%;
+    --cube-white: 0 0% 100%;
+    
+    /* Gradient backgrounds (low opacity for CTA sections) */
+    --gradient-cta: linear-gradient(
+      135deg,
+      hsl(217 91% 60% / 0.08) 0%,
+      hsl(25 100% 50% / 0.06) 50%,
+      hsl(0 100% 50% / 0.04) 100%
+    );
+    
+    /* Decorative blur colors */
+    --blur-red: hsl(0 100% 50% / 0.15);
+    --blur-orange: hsl(25 100% 50% / 0.12);
+    --blur-blue: hsl(217 91% 60% / 0.15);
+    --blur-green: hsl(120 100% 35% / 0.10);
+    --blur-yellow: hsl(48 100% 50% / 0.10);
   }
 }
 
@@ -66,34 +84,146 @@ body[style='pointer-events: none;'] {
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
   }
 }
 
-/* Scrollbar Styling */
-/* width */
+/* ===== Spacing Scale (8px base) ===== */
+/* 
+  space-1: 8px
+  space-2: 16px
+  space-3: 24px
+  space-4: 32px
+  space-6: 48px
+  space-8: 64px
+  space-12: 96px
+*/
+
+/* ===== Scrollbar Styling (Light Mode Only) ===== */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
-/* Track */
-.dark ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+::-webkit-scrollbar-track {
+  background: hsl(220 14% 96%);
+  border-radius: 4px;
 }
 
-.light ::-webkit-scrollbar-track {
-  background: #030712;
-}
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ff0069;
-  border-radius: 1px;
+  background: hsl(0 85% 50%);
+  border-radius: 4px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1f7bf1;
+  background: hsl(0 85% 45%);
 }
-/* END Scrollbar Styling */
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0 85% 50%) hsl(220 14% 96%);
+}
+
+/* ===== Selection Styling ===== */
+::selection {
+  background: hsl(0 85% 50% / 0.2);
+  color: hsl(222 47% 11%);
+}
+
+/* ===== Focus Visible Styling ===== */
+:focus-visible {
+  outline: 2px solid hsl(0 85% 50%);
+  outline-offset: 2px;
+}
+
+/* ===== Utility Classes for Rubik's Cube Accents ===== */
+@layer utilities {
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
+  }
+  
+  .blur-shape-red {
+    background: var(--blur-red);
+  }
+  
+  .blur-shape-orange {
+    background: var(--blur-orange);
+  }
+  
+  .blur-shape-blue {
+    background: var(--blur-blue);
+  }
+  
+  .blur-shape-green {
+    background: var(--blur-green);
+  }
+  
+  .blur-shape-yellow {
+    background: var(--blur-yellow);
+  }
+}
+
+/* ===== Glass Card Effect ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+.glass-card-highlight {
+  border-color: hsl(0 85% 50% / 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 0 2px hsl(0 85% 50% / 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 0.15);
+}

@@ -1,20 +1,35 @@
+'use client';
+
+import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { motion } from 'framer-motion';
+
 export default function StatsSection() {
   const years = new Date().getFullYear() - new Date('2021').getFullYear();
+
   const stats = [
-    { number: '35+', label: 'Happy Clients' },
-    { number: years, label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' },
-    { number: '24/7', label: 'Support Available' },
+    { end: 35, suffix: '+', label: 'Happy Clients' },
+    { end: years, suffix: '', label: 'Years Experience' },
+    { end: 100, suffix: '%', label: 'Client Satisfaction' },
+    { end: 24, suffix: '/7', label: 'Support Available' },
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-12">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8"
+    >
       {stats.map((stat, index) => (
-        <div key={index} className="text-center">
-          <div className="text-3xl font-bold text-primary">{stat.number}</div>
-          <div className="text-muted-foreground">{stat.label}</div>
-        </div>
+        <AnimatedCounter
+          key={index}
+          end={stat.end}
+          suffix={stat.suffix}
+          label={stat.label}
+          duration={1.5}
+        />
       ))}
-    </div>
+    </motion.div>
   );
 }

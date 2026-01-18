@@ -1,6 +1,5 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 export default function NotFound() {
   return (
@@ -8,9 +7,9 @@ export default function NotFound() {
       <section className="w-full sm:text-center flex flex-col justify-start sm:items-center space-y-6 sm:space-y-12">
         <div className="flex flex-col items-start justify-center space-y-4">
           <div className="space-y-2">
-            <Link href="/">
+            <a href="/">
               <Badge>Oh No!</Badge>
-            </Link>
+            </a>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               404 - Page Not Found
             </h2>
@@ -22,7 +21,7 @@ export default function NotFound() {
         </div>
 
         <Button asChild className="self-start sm:self-center">
-          <Link href="/">Back to Home</Link>
+          <a href="/">Back to Home</a>
         </Button>
       </section>
     </div>

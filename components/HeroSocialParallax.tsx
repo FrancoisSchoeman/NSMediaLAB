@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useRef } from 'react';
-import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import {
   motion,
   useAnimationFrame,
@@ -10,6 +10,16 @@ import {
 } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import AnimatedTitle from '@/components/AnimatedTitle';
+import { sendGTMEvent } from '@next/third-parties/google';
+import { Badge } from '@/components/ui/badge';
+import { CheckCircle2, Users, Star } from 'lucide-react';
+import elevatingCube from '@/public/rubiks-cube-elevating.json';
+
+// Dynamic import with SSR disabled to prevent "document is not defined" error during static export
+const LottiePlayer = dynamic(
+  () => import('@/components/LottiePlayer').then((mod) => mod.LottiePlayer),
+  { ssr: false }
+);
 
 import {
   InstagramLogoIcon,
@@ -45,13 +55,19 @@ function clamp(n: number, min: number, max: number) {
 export default function HeroSocialParallax() {
   const wrapRef = useRef<HTMLDivElement | null>(null);
 
-  // mouse in [-1..1]
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
 
-  // smooth the mouse signal (global)
   const mxSmooth = useSpring(mx, { stiffness: 120, damping: 22, mass: 0.9 });
   const mySmooth = useSpring(my, { stiffness: 120, damping: 22, mass: 0.9 });
+
+  const handleCTAClick = (ctaText: string) => {
+    sendGTMEvent({
+      event: 'cta_click',
+      cta_location: 'hero',
+      cta_text: ctaText,
+    });
+  };
 
   const icons = useMemo<IconDef[]>(
     () => [
@@ -112,7 +128,6 @@ export default function HeroSocialParallax() {
           <MessageCircle size={size} className={className} />
         ),
       },
-
       // RIGHT SIDE (cluster)
       {
         key: 'pin',
@@ -175,7 +190,7 @@ export default function HeroSocialParallax() {
   );
 
   return (
-    <div
+    <section
       ref={wrapRef}
       onMouseMove={(e) => {
         const el = wrapRef.current;
@@ -192,31 +207,29 @@ export default function HeroSocialParallax() {
         mx.set(0);
         my.set(0);
       }}
-      className="relative w-full min-h-[72vh] flex items-center justify-center overflow-visible"
+      className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Background (Buffer-ish) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-zinc-50 dark:from-zinc-950 dark:to-zinc-900" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50/50 to-white" />
+      
+      {/* Subtle grid pattern */}
       <div
         className="absolute inset-0"
         style={{
-          opacity: 0.42,
+          opacity: 0.3,
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='rgba(0,0,0,0.22)' stroke-width='1'/%3E%3C/svg%3E\")",
-          backgroundSize: '28px 28px',
-        }}
-      />
-      <div
-        className="absolute inset-0 hidden dark:block"
-        style={{
-          opacity: 0.34,
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='rgba(255,255,255,0.22)' stroke-width='1'/%3E%3C/svg%3E\")",
-          backgroundSize: '28px 28px',
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='rgba(0,0,0,0.08)' stroke-width='1'/%3E%3C/svg%3E\")",
+          backgroundSize: '40px 40px',
         }}
       />
 
-      {/* Floating icons layer */}
-      <div className="absolute inset-0 overflow-visible">
+      {/* Decorative blur shapes - Rubik's cube colors at very low opacity */}
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-shape-blue blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-shape-orange blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full blur-shape-red blur-3xl pointer-events-none opacity-50" />
+
+      {/* Floating icons layer - hidden on mobile */}
+      <div className="absolute inset-0 overflow-visible hidden lg:block">
         {icons.map((def, idx) => (
           <FloatingIcon
             key={def.key}
@@ -228,53 +241,106 @@ export default function HeroSocialParallax() {
         ))}
       </div>
 
-      {/* fade icons near the center so they don't sit behind text */}
+      {/* Center fade for text readability */}
       <div
-        className="pointer-events-none absolute inset-0 z-[3]"
+        className="pointer-events-none absolute inset-0 z-[3] hidden lg:block"
         style={{
           background:
-            'radial-gradient(circle at center, rgba(255,255,255,1) 0%, rgba(255,255,255,0.96) 34%, rgba(255,255,255,0) 64%)',
-          mixBlendMode: 'screen',
-          opacity: 0.9,
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 z-[3] hidden dark:block"
-        style={{
-          background:
-            'radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 40%, rgba(0,0,0,0) 65%)',
-          mixBlendMode: 'multiply',
-          opacity: 0.85,
+            'radial-gradient(circle at center, rgba(255,255,255,1) 0%, rgba(255,255,255,0.98) 30%, rgba(255,255,255,0) 60%)',
         }}
       />
 
-      {/* Center content (your existing hero copy) */}
-      <div className="relative z-10 w-full px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <AnimatedTitle text="Solve the Social Media Cube with Social Media Marketing" />
+      {/* Center content */}
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-10 sm:pt-0">
+        <div className="mx-auto max-w-4xl text-center">
 
-          <p className="mt-4 mx-auto max-w-[70ch] text-neutral-600 md:text-xl">
-            Hi there! I&apos;m Nadia, and this is NS MediaLAB. I approach social
-            media as a multidimensional system - much like a Rubik’s Cube. Each
-            face represents a critical platform: Facebook, Instagram, YouTube,
-            and beyond. Individually, they hold potential. When strategically
-            aligned, they unlock powerful brand momentum.
-          </p>
+        <LottiePlayer
+                src={elevatingCube}
+                height="150px"
+                width="150px"
+                speed={1}
+                aria-label="Animated Rubik's cube representing social media strategy"
+              />
+          {/* Social Proof Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6"
+          >
+            <Badge variant="secondary" className="px-4 py-2 text-sm font-medium gap-2">
+              <Users className="h-4 w-4" />
+              Trusted by 35+ South African Businesses
+            </Badge>
+          </motion.div>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild>
-              <Link href="/contact">Contact Us</Link>
+          {/* Main Headline */}
+          <AnimatedTitle text="Solve Your Social Media Puzzle" />
+          
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-6 mx-auto max-w-2xl text-lg sm:text-xl text-muted-foreground"
+          >
+            Hi, I&apos;m Nadia! I help small businesses transform their social media 
+            presence into a powerful growth engine. Like solving a Rubik&apos;s Cube, 
+            I align every platform to work together seamlessly.
+          </motion.p>
+
+          {/* Trust indicators */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground"
+          >
+            <span className="flex items-center gap-1">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Free Consultation
+            </span>
+            <span className="flex items-center gap-1">
+              <Star className="h-4 w-4 text-primary" />
+              5-Star Reviews
+            </span>
+            <span className="flex items-center gap-1">
+              <CheckCircle2 className="h-4 w-4 text-primary" />
+              Stilbaai Based
+            </span>
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Button
+              asChild
+              size="lg"
+              className="w-full sm:w-auto text-base px-8 shadow-lg hover:shadow-xl transition-shadow"
+              onClick={() => handleCTAClick('Get a Free Quote')}
+            >
+              <a href="/contact">Get a Free Quote</a>
             </Button>
-            <Button asChild variant="outline">
-              <Link href="/pricing">Our Pricing</Link>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto text-base px-8"
+              onClick={() => handleCTAClick('View Pricing')}
+            >
+              <a href="/pricing">View Pricing</a>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* soft vignette to keep text readable */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.0)_0%,rgba(255,255,255,0.85)_55%,rgba(255,255,255,0.95)_100%)] dark:bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.0)_0%,rgba(0,0,0,0.55)_60%,rgba(0,0,0,0.75)_100%)]" />
-    </div>
+      {/* Bottom gradient fade */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+    </section>
   );
 }
 
@@ -289,26 +355,22 @@ function FloatingIcon({
   my: ReturnType<typeof useSpring>;
   seed: number;
 }) {
-  // Follow offsets (each icon has its own spring, feels independent)
   const xTarget = useMotionValue(0);
   const yTarget = useMotionValue(0);
 
   const x = useSpring(xTarget, { stiffness: 200, damping: 22, mass: 0.7 });
   const y = useSpring(yTarget, { stiffness: 200, damping: 22, mass: 0.7 });
 
-  // Float offsets
   const fx = useMotionValue(0);
   const fy = useMotionValue(0);
 
   useAnimationFrame((t) => {
-    // mouse follow
     const fxMouse = clamp(mx.get() * def.strength, -def.strength, def.strength);
     const fyMouse = clamp(my.get() * def.strength, -def.strength, def.strength);
 
     xTarget.set(fxMouse);
     yTarget.set(fyMouse);
 
-    // deterministic float
     const phase = seed * 0.001;
     const s = def.floatSpeed;
 
@@ -330,11 +392,8 @@ function FloatingIcon({
         translateY: fy,
       }}
     >
-      <div className="w-full h-full rounded-2xl bg-white/85 dark:bg-zinc-900/70 shadow-sm ring-1 ring-black/5 dark:ring-white/10 flex items-center justify-center">
-        <def.Render
-          size={def.icon}
-          className="text-zinc-800 dark:text-zinc-100"
-        />
+      <div className="w-full h-full rounded-2xl bg-white shadow-md ring-1 ring-black/5 flex items-center justify-center">
+        <def.Render size={def.icon} className="text-foreground/80" />
       </div>
     </motion.div>
   );

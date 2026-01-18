@@ -1,21 +1,25 @@
-import Link from 'next/link';
-
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Badge } from '@/components/ui/badge';
-import { LottiePlayer } from '@/components/LottiePlayer';
 import { Metadata } from 'next';
-
-import cube from '../../public/rubiks-cube.json';
+import { Button } from '@/components/ui/button';
 import PricingCards from '@/components/PricingCards';
+import { TrustBadges } from '@/components/TrustBadges';
+import { CheckCircle2, HelpCircle } from 'lucide-react';
+import bgImage from '@/public/bg-image.webp';
 
 export const metadata: Metadata = {
-  title: 'Pricing | NS MediaLAB',
+  title: 'Pricing',
   description:
-    'Looking to dominate Facebook, Instagram, and YouTube for your South African business? NS MediLAB offers expert social media marketing services including content creation, advertising campaigns, analytics & reporting, and strategy consultation. Free consultations available!',
+    'Pricing plans for social media marketing services. Choose from our packages or get a custom quote tailored to your business needs.',
   keywords:
-    'social media marketing Stilbaai, Instagram marketing Stilbaai, YouTube marketing Stilbaai, social media advertising Still Bay, Facebook ads Still Bay, Instagram ads Stilbaai, YouTube ads Stilbaai, affordable social media marketing South Africa',
+    'social media marketing pricing, affordable social media packages, Facebook marketing cost, Instagram marketing pricing, South Africa social media services cost',
 };
+
+const includedInAllPackages = [
+  'Content calendar',
+  'Monthly strategy planning',
+  'Community management',
+  'Direct WhatsApp support',
+  'Performance reporting',
+];
 
 export default function PricingPage() {
   const structuredData = {
@@ -23,99 +27,128 @@ export default function PricingPage() {
     '@type': 'WebPage',
     name: 'Pricing | NS MediaLAB',
     description:
-      'NS MediaLAB offers expert social media marketing services including content creation, advertising campaigns, analytics & reporting, and strategy consultation with flexible pricing packages.',
+      'Pricing plans for social media marketing services with flexible packages for every budget.',
     mainEntity: {
       '@type': 'LocalBusiness',
       name: 'NS MediaLAB',
-      description:
-        'Expert social media marketing services for South African businesses',
+      priceRange: 'R500-R5000',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Stilbaai',
         addressRegion: 'Western Cape',
-        addressCountry: 'South Africa',
-      },
-      priceRange: 'R500-R5000',
-      serviceType: [
-        'Social Media Marketing',
-        'Content Creation',
-        'Advertising Campaigns',
-        'Analytics & Reporting',
-        'Strategy Consultation',
-        'Product & Lifestyle Photography',
-      ],
-      areaServed: {
-        '@type': 'Country',
-        name: 'South Africa',
+        addressCountry: 'ZA',
       },
     },
   };
 
   return (
-    <div className="my-12 flex min-h-screen flex-col sm:items-center justify-center relative w-full h-full">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <section className="w-full sm:text-center flex flex-col justify-start sm:items-center">
-        <div className="space-y-6 sm:space-y-12">
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Pricing
-              </h1>
-              <p className="max-w-[40ch] sm:max-w-[900px] text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Looking to dominate Facebook, Instagram, and YouTube for your
-                South African business? NS MediaLAB offers expert social media
-                marketing services including content creation, advertising
-                campaigns, analytics & reporting, strategy consultation, and
-                product or lifestyle photography.
-              </p>
+    <div
+      className="min-h-screen bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${bgImage.src})` }}
+    >
+      <div className="min-h-screen bg-white/70 backdrop-blur-[8px] pt-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+
+        {/* Hero Section */}
+        <section className="">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary backdrop-blur-xl bg-gradient-to-r from-black/10 to-black/5 border border-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] rounded-full">
+              Pricing
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+              Pricing Plans
+            </h1>
+            <p className="mt-4 text-lg text-gray-700">
+              Choose a package that fits your needs. All packages are customizable 
+              based on your specific requirements. No hidden fees, no surprises.
+            </p>
+            <div className="mt-6">
+              <TrustBadges
+                badges={[
+                  { icon: 'check', text: 'No Lock-in Contracts' },
+                  { icon: 'check', text: 'Cancel Anytime' },
+                  { icon: 'check', text: 'Custom Quotes Available' },
+                ]}
+              />
             </div>
           </div>
-
-          <PricingCards />
-
-          <Button asChild>
-            <Link href="/contact">Contact Us</Link>
-          </Button>
         </div>
       </section>
 
-      <Separator className="my-16 sm:mb-0" />
+        {/* Pricing Cards */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <PricingCards />
 
-      <section className="w-full">
-        <div className="grid gap-4 md:grid-cols-2 md:gap-16">
-          <div className="flex flex-col items-start justify-center space-y-2">
-            <Link href="/contact">
-              <Badge>Contact Us</Badge>
-            </Link>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Keen to harness the potential of social media for your business?
-            </h2>
-            <p className="max-w-[40ch] sm:max-w-[900px] text-left text-neutral-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Get in touch with NS MediaLAB today for a free consultation and
-              discover how we can assist you in reaching your social media
-              objectives!
-            </p>
-            <div className="py-4">
-              <Button asChild>
-                <Link href="/contact">Get Started</Link>
+            <div className="mt-12 text-center">
+              <p className="text-sm text-gray-600 mb-4">
+                * Prices vary based on client needs and scope of work
+              </p>
+              <Button asChild size="lg">
+                <a href="/contact">Get a Custom Quote</a>
               </Button>
             </div>
           </div>
+        </section>
 
-          <div className="flex flex-col items-center space-y-4 justify-start">
-            <LottiePlayer
-              src={cube}
-              height="400px"
-              width="400px"
-              speed={0.5}
-              aria-label="Animated 3D cube representing social media growth"
-            />
+        {/* What's Included */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary backdrop-blur-xl bg-gradient-to-r from-black/10 to-black/5 border border-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] rounded-full">
+                Included
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                What&apos;s Included in Every Package
+              </h2>
+              <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
+                No matter which package you choose, you&apos;ll always get these core benefits.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {includedInAllPackages.map((item, index) => (
+                <div
+                  key={index}
+                  className='glass-card flex items-center gap-3 p-4'
+                >
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="text-sm font-medium text-gray-900">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* FAQ Preview */}
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto p-8 rounded-3xl backdrop-blur-xl bg-gradient-to-br from-white/60 via-white/40 to-white/30 border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.8)]">
+              <div className="p-3 rounded-full backdrop-blur-xl bg-gradient-to-br from-white/70 to-white/50 border border-white/60 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)] text-primary w-fit mx-auto mb-4">
+                <HelpCircle className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Have Questions?
+              </h2>
+              <p className="mt-4 text-gray-700">
+                Check out our frequently asked questions or get in touch directly. 
+                I&apos;m always happy to help clarify any questions about pricing or services.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild variant="outline">
+                  <a href="/faqs">View FAQs</a>
+                </Button>
+                <Button asChild>
+                  <a href="/contact">Contact Me</a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

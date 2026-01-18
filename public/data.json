@@ -77,36 +77,6 @@
   ],
   "images": [
     {
-      "src": "/client-logos/tronelle-steyl-photography.webp",
-      "alt": "Tronelle Steyl Photography Stilbaai Logo",
-      "facebook": "https://www.facebook.com/p/Tronelle-Steyl-Fotografie-100086792325581/"
-    },
-    {
-      "src": "/client-logos/stilbaai-online.webp",
-      "alt": "Stilbaai Online Logo",
-      "facebook": "https://www.facebook.com/profile.php?id=100086939410923"
-    },
-    {
-      "src": "/client-logos/ghians-bbq.webp",
-      "alt": "Ghians BBQ and Grill House Stilbaai Logo",
-      "facebook": "https://www.facebook.com/ghiansbbq"
-    },
-    {
-      "src": "/client-logos/skin-zone-stilbaai.webp",
-      "alt": "The Skin Zone Stilbaai Logo",
-      "facebook": "https://www.facebook.com/TheSkinzoneStilbaai"
-    },
-    {
-      "src": "/client-logos/skin-zone-express.webp",
-      "alt": "The Skin Zone Express Stilbaai Logo",
-      "facebook": "https://www.facebook.com/theskinzoneexpress"
-    },
-    {
-      "src": "/client-logos/spar-stilbaai.webp",
-      "alt": "Spar Stilbaai Logo",
-      "facebook": "https://www.facebook.com/SPARStilbaai"
-    },
-    {
       "src": "/client-logos/on-the-rocks.webp",
       "alt": "On The Rocks Seafood and Steak Restaurant Stilbaai Logo",
       "facebook": "https://www.facebook.com/OnTheRocksStilbaai"
@@ -130,16 +100,6 @@
       "src": "/client-logos/susan-roos-juwele.webp",
       "alt": "Susan Roos Jewellery Stilbaai Logo",
       "facebook": "https://www.facebook.com/SusanRoosJuwele"
-    },
-    {
-      "src": "/client-logos/beach-house-upholstery.webp",
-      "alt": "Beach House Upholstery Stilbaai Logo",
-      "facebook": "https://www.facebook.com/beachhouseupholstery"
-    },
-    {
-      "src": "/client-logos/coastal-security-stilbaai.webp",
-      "alt": "Coastal Security Stilbaai Logo",
-      "facebook": "https://www.facebook.com/CSStilbaai"
     },
     {
       "src": "/client-logos/pest-control-excellence.webp",
@@ -167,11 +127,6 @@
       "facebook": "https://www.facebook.com/stilbaaisekuriteitsnetwerk"
     },
     {
-      "src": "/client-logos/blue-point-technologies.webp",
-      "alt": "Blue Point Technologies Stilbaai Logo",
-      "facebook": "https://www.facebook.com/BluePointTechnologiesStilbaai"
-    },
-    {
       "src": "/client-logos/still-painting.webp",
       "alt": "Still Painting Services Stilbaai Logo",
       "facebook": "https://www.facebook.com/profile.php?id=100086605951136"
@@ -182,9 +137,79 @@
       "facebook": "https://www.facebook.com/profile.php?id=100093833183436"
     },
     {
-      "src": "/client-logos/hammer-safaris-barrydale.webp",
-      "alt": "Hammer-Safaris Barrydale Logo",
-      "facebook": "https://www.facebook.com/HammerSafarisBarrydale"
+      "src": "/client-logos/aluvert-cape.webp",
+      "alt": "Aluvert Cape Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=61574938216578"
+    },
+    {
+      "src": "/client-logos/body-basic.webp",
+      "alt": "Body Basic Professional skin care & therapeutic massage Logo",
+      "facebook": "https://www.facebook.com/bodybasicmassage/"
+    },
+    {
+      "src": "/client-logos/elize-cottage.webp",
+      "alt": "Elize Cottage Stilbaai Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100083209667030"
+    },
+    {
+      "src": "/client-logos/iala.webp",
+      "alt": "IALA. International Academy for Leadership through Adventure Logo",
+      "facebook": "https://www.facebook.com/ialagapyear/"
+    },
+    {
+      "src": "/client-logos/just-mediate.webp",
+      "alt": "Just - Mediate Logo",
+      "facebook": "https://www.facebook.com/JustMediate/"
+    },
+    {
+      "src": "/client-logos/maggie-maude.webp",
+      "alt": "MaggieMaude Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=61565107807251"
+    },
+    {
+      "src": "/client-logos/neurodiverse.webp",
+      "alt": "Neurodiverse Travellers Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=61580913848162"
+    },
+    {
+      "src": "/client-logos/nl-timber.webp",
+      "alt": "NL Timber and Hardware Logo",
+      "facebook": "https://www.facebook.com/nltimberandhardware/"
+    },
+    {
+      "src": "/client-logos/pom-management.webp",
+      "alt": "Peace of Mind Management & Maintenance Logo",
+      "facebook": "https://www.facebook.com/peaceofmindmanagementandmaintenance/"
+    },
+    {
+      "src": "/client-logos/propollen.webp",
+      "alt": "ProPollen Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100091103091887"
+    },
+    {
+      "src": "/client-logos/stilbaai-scuba.webp",
+      "alt": "Still Bay Scuba-Diving Logo",
+      "facebook": "https://www.facebook.com/StillBayScuba"
+    },
+    {
+      "src": "/client-logos/blinds-factory.webp",
+      "alt": "The Blinds Factory Logo",
+      "facebook": "https://www.facebook.com/profile.php?id=100063719613507"
+    },
+    {
+      "src": "/client-logos/clean-shop.webp",
+      "alt": "The Clean Shop Stilbaai Logo",
+      "facebook": "https://www.facebook.com/thecleanshopstilbaai/"
+    },
+    {
+      "src": "/client-logos/vicom.webp",
+      "alt": "Vicom Electronics Stilbaai Logo",
+      "facebook": "https://www.facebook.com/vicomstilbaai/"
+    },
+    {
+      "src": "/client-logos/wild-rescue.webp",
+      "alt": "Wild Rescue NPO Logo",
+      "facebook": "https://www.facebook.com/WildRescueWC"
     }
   ]
 }

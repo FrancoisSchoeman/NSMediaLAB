@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { Metadata } from 'next';
+import bgImage from '@/public/bg-image.webp';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | NS MediaLAB',
@@ -36,50 +36,63 @@ export default function PrivacyPolicy() {
   };
 
   return (
-    <div className="flex flex-col sm:items-center justify-between relative w-full h-full">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <section className="min-h-full pt-16">
-        <div className="flex sm:justify-center flex-col">
-          <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-            Terms of Service
-          </h1>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
-            Last Updated: 2024-04-03
-          </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
-            Welcome to NS MediaLAB. By accessing or using our services, you
-            agree to be bound by these Terms of Service. These terms apply to
-            all visitors, users, and others who wish to access or use our
-            service.
-          </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
-            Our services include social media marketing, content creation, and
-            other related services. We use tools like Google Analytics and
-            Google reCaptcha V3 to enhance your experience and protect our
-            website.
-          </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
-            You agree not to misuse our services or help anyone else do so. We
-            reserve the right to refuse service, terminate accounts, remove or
-            edit content, or cancel orders in our sole discretion.
-          </p>
-          <p className="max-w-[40ch] sm:max-w-[700px] mt-4 text-left text-neutral-600 md:text-xl">
-            By using our services, you agree to our collection, use, and sharing
-            of your information as outlined in our Privacy Policy. For any
-            questions about these terms, please contact us.
-          </p>
-          <div className="my-8 sm:my-4 flex gap-4">
-            <Button asChild>
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+    <div
+      className="min-h-screen bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `url(${bgImage.src})` }}
+    >
+      <div className="min-h-screen bg-white/70 backdrop-blur-[8px] pt-16">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        
+        <section className="py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="glass-card p-8 md:p-12">
+                <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary backdrop-blur-xl bg-gradient-to-r from-black/10 to-black/5 border border-black/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] rounded-full">
+                  Legal
+                </span>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900">
+                  Terms of Service
+                </h1>
+                <p className="mt-4 text-gray-600 md:text-lg">
+                  Last Updated: 2024-04-03
+                </p>
+                <div className="mt-8 space-y-6 text-gray-700 md:text-lg">
+                  <p>
+                    Welcome to NS MediaLAB. By accessing or using our services, you
+                    agree to be bound by these Terms of Service. These terms apply to
+                    all visitors, users, and others who wish to access or use our
+                    service.
+                  </p>
+                  <p>
+                    Our services include social media marketing, content creation, and
+                    other related services. We use tools like Google Analytics and
+                    Google reCaptcha V3 to enhance your experience and protect our
+                    website.
+                  </p>
+                  <p>
+                    You agree not to misuse our services or help anyone else do so. We
+                    reserve the right to refuse service, terminate accounts, remove or
+                    edit content, or cancel orders in our sole discretion.
+                  </p>
+                  <p>
+                    By using our services, you agree to our collection, use, and sharing
+                    of your information as outlined in our Privacy Policy. For any
+                    questions about these terms, please contact me.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Button asChild size="lg">
+                    <a href="/contact">Contact Me</a>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <div className="mb-16"></div>
+        </section>
+      </div>
     </div>
   );
 }
