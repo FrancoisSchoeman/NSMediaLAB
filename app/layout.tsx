@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: '%s | NS MediaLAB',
   },
   description:
-    'Transform your brand with NS MediaLAB\'s personalised social media marketing services. Based in Stilbaai, i help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!',
+    "Transform your brand with NS MediaLAB's personalised social media marketing services. Based in Stilbaai, i help small businesses grow on Facebook, Instagram, YouTube & more. Get a free consultation today!",
   keywords: [
     'social media marketing Stilbaai',
     'Facebook marketing South Africa',
@@ -62,7 +62,8 @@ export const metadata: Metadata = {
     locale: 'en_ZA',
     url: siteUrl,
     siteName: 'NS MediaLAB',
-    title: 'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
+    title:
+      'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
     description:
       'Transform your brand with personalised social media marketing. I help small businesses grow on Facebook, Instagram, YouTube & more. Free consultation available!',
     images: [
@@ -76,14 +77,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
+    title:
+      'Professional Social Media Marketing Services in Stilbaai | NS MediaLAB',
     description:
       'Transform your brand with personalised social media marketing. I help small businesses grow on Facebook, Instagram, YouTube & more.',
     images: ['/og-image.jpg'],
     creator: '@nsmedialab',
   },
   verification: {
-    google: 'your-google-verification-code',
     other: {
       'msvalidate.01': '89E0EBD5DCE64D433C64F5C109F2E9C8',
     },
@@ -187,7 +188,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${GeistSans.variable} font-sans antialiased bg-white text-foreground`}>
+      <body
+        className={`${GeistSans.variable} font-sans antialiased bg-white text-foreground`}
+      >
         <GoogleTagManager gtmId="GTM-P8C3JZJH" />
         <Header />
         <a
@@ -196,10 +199,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <main
-          id="main-content"
-          className="min-h-screen"
-        >
+        <main id="main-content" className="min-h-screen">
           {children}
         </main>
         <Toaster />
